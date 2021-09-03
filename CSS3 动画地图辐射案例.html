@@ -12,15 +12,77 @@
         }
 
         .map {
+            position: relative;
             width: 747px;
             height: 617px;
             background: url(images/map.png);
+            margin: 0 auto;
+        }
+
+        .city {
+            position: absolute;
+            top: 228px;
+            right: 193px;
+            color: #fff;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        /* 元素选择器 */
+        .city div[class^="pulse"] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            /* 制作波纹，不要给盒子设置边框，而是设置阴影，阴影会带有虚化的效果，看起来更好 */
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: circle 1.6s linear infinite;
+        }
+
+        /* !important 给后面的两个波纹提升权重 */
+        .pulse2 {
+            animation-delay: 0.8s !important;
+        }
+
+        .pulse3 {
+            animation-delay: 1.6s !important;
+        }
+
+        @keyframes circle {
+            0% {}
+
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="map"></div>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
 </body>
 
 </html>
