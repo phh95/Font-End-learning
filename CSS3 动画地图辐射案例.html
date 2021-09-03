@@ -26,6 +26,12 @@
             color: #fff;
         }
 
+        .guangzhou {
+            position: absolute;
+            top: 310px;
+            right: -2px;
+        }
+
         .dotted {
             width: 8px;
             height: 8px;
@@ -47,6 +53,7 @@
             animation: circle 1.6s linear infinite;
         }
 
+        /* 让动画错开 */
         /* !important 给后面的两个波纹提升权重 */
         .pulse2 {
             animation-delay: 0.8s !important;
@@ -81,8 +88,13 @@
             <div class="pulse1"></div>
             <div class="pulse2"></div>
             <div class="pulse3"></div>
+            <div class="guangzhou">
+                <div class="dotted"></div>
+                <div class="pulse1"></div>
+                <div class="pulse2"></div>
+                <div class="pulse3"></div>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
