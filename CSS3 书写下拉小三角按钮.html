@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3书写下拉小三角按钮</title>
+    <style>
+        div {
+            position: relative;
+            width: 360px;
+            height: 50px;
+            border: 2px solid #000;
+            margin: 100px auto;
+        }
+
+        div::after {
+            position: absolute;
+            top: 17px;
+            right: 16px;
+            content: "";
+            width: 10px;
+            height: 10px;
+            /* 给伪元素设置右边和下边框 */
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+        }
+
+        /* 鼠标放到最外层的div盒子上，向下的小三角会变成向上的 */
+        div:hover::after {
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
