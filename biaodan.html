@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <!-- 用户输入用户名 -->
+        用户名： <input type="text" name="username" value="请输入用户名" /> <br> 
+        
+        密码： <input type="password" name="pwd" /> <br>
+
+        <!-- 单选按钮，可以实现多选一 -->
+        <!-- name 是表单元素的名字，这里性别单选按钮必须有相同的名字 name，才可以实现多选一 -->
+        性别： <input type="radio" name="sex" value="男" /> 男 <input type="radio" name="sex" name="女" /> 女 <br>
+
+        <!-- 复选框，可以实现多选 -->
+        爱好： <input type="checkbox" name="hobby" value="吃饭" checked="checked" /> 吃饭 <input type="checkbox" name="hobby" value="睡觉" /> 睡觉 <input type="checkbox" name="hobby" value="打豆豆" /> 打豆豆
+        <br>
+        <!-- 提交按钮，通过 value 属性可以更改提交按钮中的文字 -->
+        <input type="submit" value="免费注册" />
+        <!-- 重置按钮可以还原表单元素初始的默认状态 -->
+        <input type="reset" value="重新填写" /> <br>
+
+        <!-- 普通按钮 button -->
+        <input type="button" value="获取短信验证码" /> <br>
+
+        <!-- 上传文件 -->
+        上传头像： <input type="file" />
+    </form>
+</body>
+</html>

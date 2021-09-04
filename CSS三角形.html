@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三角形的制作</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            border: 10px solid skyblue;
+        }
+
+        .box2 {
+            width: 0;
+            height: 0;
+            border-top: 10px solid red;
+            border-right: 10px solid yellow;
+            border-bottom: 10px solid blue;
+            border-left: 10px solid skyblue;
+            margin: 50px auto;
+        }
+
+        .box3 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: pink;
+            margin: 0 auto;
+        }
+
+        .jd {
+            position: relative;
+            width: 120px;
+            height: 249px;
+            background-color: skyblue;
+        }
+
+        .jd span {
+
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            right: 15px;
+            top: -10px;
+            border: 5px solid transparent;
+            border-bottom-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+</body>
+
+</html>

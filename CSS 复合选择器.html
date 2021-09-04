@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol li {
+            color: blue;
+        }
+
+        /* 子元素选择器 */
+        .nav>a {
+            color: red;
+        }
+
+        /* 如果使用的是空格，就会选中所有的 a 标签 */
+        /* .nav a {
+            color: yellow;
+        } */
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是有序列表中的小li</li>
+        <li>我是有序列表中的小li</li>
+        <li>我是有序列表中的小li</li>
+    </ol>
+    <ul>
+        <li>我是无序列表中的小li</li>
+        <li>我是无序列表中的小li</li>
+        <li>我是无序列表中的小li</li>
+    </ul>
+
+    <div class="nav">
+        <a href="#">我是儿子</a>
+        <p>
+            <a href="#">我是孙子</a>
+        </p>
+    </div>
+
+</body>
+
+</html>

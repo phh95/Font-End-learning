@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增过渡属性</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            /* margin: 100px auto; */
+            background-color: skyblue;
+            /* transition: 变化的属性 花费的时间 运动曲线 何时开始（是否延时触发）; */
+            /* 如果想要给多个属性设置过渡动画，需要用逗号进行分隔 */
+            /* transition: width 0.5s, height 0.5s; */
+            /* 更简化的写法，使用 all 来代替变化的属性 */
+            transition: all 0.5s;
+        }
+
+        div:hover {
+            width: 400px;
+            height: 200px;
+            background-color: thistle;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

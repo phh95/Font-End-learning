@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权重的叠加</title>
+    <style>
+        /* 有两个标签，称为复合选择器 */
+        /* ul li 权重为 0,0,0,1 + 0,0,0,1 = 0,0,0,2 */
+        ul li {
+            color: green;
+        }
+
+        /* li 的权重为 0,0,0,1   */
+        li {
+            color: red;
+        }
+
+        /* .nav li 的权重为 0,0,1,0 + 0,0,0,1 = 0,0,1,1 */
+        .nav li {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>大猪蹄子</li>
+        <li>大肘子</li>
+        <li>猪尾巴</li>
+    </ul>
+</body>
+
+</html>

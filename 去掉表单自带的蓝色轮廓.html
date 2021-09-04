@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>去掉表单自带的蓝色轮廓线</title>
+    <style>
+        /* 取消表单蓝色的轮廓线 */
+        input {
+            outline: none;
+        }
+
+        textarea {
+            /* 不让文本域自由改变大小 */
+            resize: none;
+            /* 同时取消文本域的蓝色轮廓线 */
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <!-- 文本域 -->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+
+</html>
