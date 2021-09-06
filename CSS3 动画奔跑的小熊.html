@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3动画奔跑的小熊</title>
+    <style>
+        body {
+            height: 3000px;
+            background: url(images/qier.png) no-repeat top center;
+        }
+
+        div {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            margin: 1100px auto;
+            /* 一个元素可以添加多个动画，用逗号将动画分隔开，分别给动画设置相应的参数 */
+            animation: run 1s steps(8) infinite, move 4s linear forwards;
+        }
+
+        @keyframes run {
+
+            /* background-position 设置背景图片的位置 */
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
