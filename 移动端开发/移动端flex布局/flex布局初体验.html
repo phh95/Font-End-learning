@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex布局初体验</title>
+    <style>
+        div {
+            display: flex;
+            width: 1000px;
+            height: 400px;
+            background-color: skyblue;
+            justify-content: space-around;
+        }
+
+        div span {
+            /* width: 100px; */
+            height: 100px;
+            background-color: teal;
+            margin-right: 10px;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
