@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流式布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            /* 宽度设置一个百分比 */
+            width: 100%;
+            max-width: 1000px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        section div {
+            float: left;
+            /* section 中每个盒子的宽度为 50%，为父元素宽度的一半 */
+            width: 50%;
+            height: 300px;
+        }
+
+        section div:nth-child(1) {
+            background-color: skyblue;
+        }
+
+        section div:nth-child(2) {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

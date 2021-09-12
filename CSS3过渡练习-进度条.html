@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3过渡练习进度条</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .bar {
+            width: 100px;
+            height: 16px;
+            border: 1px solid red;
+            border-radius: 8px;
+        }
+
+        .bar_in {
+            width: 20px;
+            height: 100%;
+            background-color: red;
+            border-radius: 8px;
+            transition: all 0.5s;
+        }
+
+        .bar:hover .bar_in {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="bar_in">
+        </div>
+    </div>
+</body>
+
+</html>

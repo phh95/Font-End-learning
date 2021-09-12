@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局实现子元素水平居中、垂直居中</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            background-color: skyblue;
+            flex-direction: row;
+            justify-content: center;
+            /* align-items 的值如果为 stretch，子元素不需要设置高度 */
+            /* align-items: stretch; */
+            align-items: center;
+        }
+
+        div span {
+            width: 150px;
+            /* height: 100px; */
+            background-color: pink;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>

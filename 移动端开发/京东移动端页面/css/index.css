@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    height: 3000px;
+    /* background-color: gray; */
+}
+
+/* 移动端额外添加的样式 */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 清除 iOS 上输入框的默认样式 */
+input {
+    -webkit-appearance: none;
+}
+
+/* 禁用长按页面时的弹出菜单 */
+img,
+a {
+    -webkit-touch-callout: none;
+}
+
+.app {
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #333;
+    list-style: none;
+    color: #fff;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(1) img {
+    width: 10px;
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    width: 30px;
+    /* 图片默认与文字的基线对齐，这里需要调整为以中线对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #df482c;
+}
+
+/* 搜索模块 */
+/* 触发BFC，给父元素添加 hidden 解决外边距合并的问题 */
+/* .search-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 44px;
+    background-color: #b53627;
+} */
+
+/* 将原先的相对定位修改为固定定位 */
+.search-wrap {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 44px;
+    min-width: 320px;
+    max-width: 640px;
+    background-color: #b53627;
+}
+
+.search-btn {
+    position: absolute;
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: "";
+    /* 伪元素是行内元素，需要转换为块元素，设置的宽和高才会起作用 */
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/search-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    line-height: 44px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+
+.jd-icon {
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.jd-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -7px;
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+}
+
+.search-icon {
+    position: absolute;
+    top: 8px;
+    left: 48px;
+    width: 18px;
+    height: 15px;
+    /* 这里的 (83,0) 是精灵图缩小后切图的位置 */
+    background: url(../images/jd-sprites.png) no-repeat -83px 0;
+    /* 把精灵图缩小为原来的一半 */
+    background-size: 200px auto;
+}
+
+input {
+    position: absolute;
+    top: 8px;
+    left: 75px;
+    font-size: 12px;
+    color: #232326;
+    line-height: 16px;
+    outline: none;
+    border: 0;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.brand {
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+nav {
+    /* 没有给 nav 设置高度，这里需要清除浮动，否则会影响后面盒子的布局 */
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+}
+
+.news {
+    margin-top: 20px;
+}
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+/* .news a:nth-child(2),
+.news a:nth-child(3) {
+    width: 25%;
+} */
+
+/* 另外一种写法，n 从 0 开始取值，即第一个值为 2 */
+.news a:nth-child(n+2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
+}
+
+.news a img {
+    width: 100%;
+}
+
+
+

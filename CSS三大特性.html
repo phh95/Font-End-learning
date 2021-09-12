@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高的继承</title>
+    <style>
+        body {
+            color: blue;
+            font: 12px/1.5 'Microsoft YaHei';
+        }
+
+        div {
+            font-size: 18px;
+            /* 继承了父级的行高 1.5，实际的行高是 18*1.5 = 27px */
+        }
+
+        p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>蓝色的文字</div>
+    <p>乱石穿空，惊涛拍岸，卷起千堆雪</p>
+</body>
+
+</html>

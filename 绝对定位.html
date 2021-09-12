@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        .yeye {
+            position: relative;
+            width: 1000px;
+            height: 800px;
+            background-color: green;
+        }
+
+        .father {
+            /* position: relative; */
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .son {
+            position: absolute;
+            bottom: 0;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单行文字溢出显示省略号</title>
+    <style>
+        div {
+            width: 150px;
+            height: 80px;
+            background-color: skyblue;
+            margin: 100px auto;
+            /* 不换行，强制文本在一行内显示 */
+            white-space: nowrap;
+            /* 溢出的部分隐藏显示 */
+            overflow: hidden;
+            /* 溢出的部分使用省略号显示 */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        早上跑步，跑步三公里，楼下见到小猫咪，路上见到一个人牵着三只狗狗
+    </div>
+</body>
+
+</html>

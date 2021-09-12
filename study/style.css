@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+    /* height: 3000px; */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+/* 清除浮动 */
+
+.header {
+    height: 42px;
+    /* 注意此地方会层叠 w 的 margin，因此左右的边距也要设置为 auto，盒子才会左右居中对齐 */
+    margin: 30px auto;
+    /* background-color: skyblue; */
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    /* background-color: slateblue; */
+}
+
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+}
+
+.nav ul li a {
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    margin: 0 15px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+    float: left;
+    width: 411px;
+    height: 42px;
+    /* background-color: purple; */
+    margin-left: 70px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    /* 加了 padding-left 之后，input 盒子会被撑大，因此 width 的值要减去 15 px */
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    background: url(images/search_button.png);
+    /* button 默认有边框，需要我们手动去掉 */
+    border: 0;
+}
+
+.user {
+    float: right;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 让图片和文字垂直居中对齐 */
+.user img {
+    vertical-align: middle;
+}
+
+.banner {
+    height: 420px;
+    background-color: #190a68;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(images/banner.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background: rgba(0,0,0, .3);
+}
+
+.subnav ul {
+    margin: 7px 0;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    /* li 没有指定宽度，因此设置 padding 不会撑大盒子 */
+    padding: 0 20px;
+}
+
+.subnav ul li a span {
+    float: right;
+}
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    /* 让文字水平居中 */
+    text-align: center;
+    /* 让文字垂直居中 */
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.bd {
+    padding: 0 20px;
+}
+
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.bd .more {
+    /* 把 a 行内元素转换为块元素 */
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: 700;
+}
+
+.goods {
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 2px 3px 3px rgba(0,0,0, .1);
+    /* 行高是会继承的，给父级添加 line-height，子元素就会垂直居中显示 */
+    line-height: 60px;
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.goods ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.goods ul li {
+    float: left;
+    /* 这里不能使用 display 将 li 转换为行内块元素，因为转换之后每个 li 之间会有一个缝隙 */
+    /* display: inline-block; */
+}
+
+.goods ul li a {
+    padding: 0 30px;
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #ccc;
+}
+
+.goods .mod {
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+.box {
+    margin-top: 30px;
+    /* 没有给 box 设置高度，会影响到后面标准流的盒子，所以要清除浮动 */
+    /* overflow: hidden; */
+}
+
+.box-hd {
+    height: 45px;
+}
+
+.box-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box-hd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+/* 把 li 的父亲 ul 宽度修改得足够宽，一行可以装下 5 个盒子，设置了外边距之后末尾的盒子就不会掉到下一行了 */
+.box-bd ul {
+    width: 1215px;
+}
+
+.box-bd ul li {
+    /* 子绝父相，父元素设置为相对定位 */
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+/* 大于号 > 是子元素选择器，只选中子元素，不管孙子元素 */
+.box-bd ul li>img {
+    width: 100%;
+}
+
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box-bd ul li .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-bd ul li .info span {
+    color: #ff7c2d;
+}
+
+.box-bd ul li em {
+    /* 子元素设置为绝对定位 */
+    position: absolute;
+    right: -4px;
+    top: 4px;
+}
+
+.footer {
+    height: 415px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 35px;
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+.copyright a {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.links {
+    float: right;
+    margin-right: 30px;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.links dl dd a {
+    font-size: 12px;
+    color: #333;
+}

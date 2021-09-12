@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单标签综合案例</title>
+</head>
+<body>
+    <h3>青春不常在，抓紧谈恋爱</h3>
+    <form>
+        <table width="600">
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" name="sex" id="nan"><label for="nan">男</label> 
+                    <input type="radio" name="sex" id="nv"><label for="nv">女</label>
+                </td>
+            </tr>
+            <tr>
+                <td>生日：</td>
+                <td>
+                    <select>
+                        <option>--请选择年份--</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                    </select>
+                    <select>
+                        <option>--请选择月份--</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <select>
+                        <option>--请选择日--</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- 第三行 -->
+            <tr>
+                <td>所在地区：</td>
+                <td>
+                    <input type="text" value="北京思密达">
+                </td>
+            </tr>
+            <tr>
+                <td>婚姻状况：</td>
+                <td>
+                    <input type="radio" name="hunyin" id="weihun" ><label for="weihun">未婚</label>
+                    <input type="radio" name="hunyin" id="liyi" ><label for="liyi">离异</label>
+                    <input type="radio" name="hunyin" id="sangou" ><label for="sangou">丧偶</label>
+                </td>
+            </tr>
+            <tr>
+                <td>学历：</td>
+                <td>
+                    <input type="text" value="本科">
+                </td>
+            </tr>
+            <tr>
+                <td>喜欢的类型：</td>
+                <td>
+                    <input type="checkbox" name="love" > 抚媚的
+                    <input type="checkbox" name="love" > 可爱的
+                    <input type="checkbox" name="love" > 小鲜肉
+                    <input type="checkbox" name="love" > 老腊肉
+                    <input type="checkbox" name="love" checked="checked" > 都喜欢
+                </td>
+            </tr>
+            <tr>
+                <td>自我介绍：</td>
+                <td>
+                    <textarea>自我介绍</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="免费注册">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" > 我同意注册条款和会员加入标准
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="#">我是会员，立即登录</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <h4>我承诺</h4>
+                    <ul>
+                        <li>年满 18 岁、单身</li>
+                        <li>抱着严肃的态度</li>
+                        <li>真诚寻找另一半</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </form> 
+</body>
+</html>

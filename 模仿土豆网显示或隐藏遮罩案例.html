@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用伪元素选择器实现遮罩显示或隐藏</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: skyblue;
+            margin: 30px auto;
+        }
+
+        .tudou img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tudou::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 最开始是隐藏起来的 */
+            display: none;
+            content: '';
+            /* 设置了绝对定位，不需要转换为块元素，就可以直接给元素设置宽度和高度 */
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3) url(images/play_icon.png) no-repeat center;
+        }
+
+        /* 当鼠标移动到tudou盒子上方时，隐藏的伪元素就显示出来了 */
+        .tudou:hover::after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <img src="images/tudou.jpeg" alt="">
+    </div>
+</body>
+
+</html>

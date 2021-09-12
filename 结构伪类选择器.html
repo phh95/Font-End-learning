@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        /* ul li:first-child {
+            background-color: blue;
+        }
+
+        ul li:last-child {
+            background-color: skyblue;
+        } */
+
+        /* 选中第三个子元素 */
+        /* ul li:nth-child(3) {
+            background-color: red;
+        } */
+
+        /* 选中所有的偶数行子元素  */
+        ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* 选中所有的奇数行子元素  */
+        ul li:nth-child(odd) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3动画速度曲线</title>
+    <style>
+        /* 制作打字机效果 */
+        .bg {
+            position: relative;
+            width: 1920px;
+            height: 1200px;
+            background: url(images/Onepiece.png) no-repeat center;
+            margin: 0 auto;
+        }
+
+        .mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4);
+        }
+
+        .word {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            overflow: hidden;
+            width: 0;
+            height: 60px;
+            font-size: 50px;
+            color: #fff;
+            /* 将文本强制在一行内显示 */
+            white-space: nowrap;
+            /* 将文字置于最顶层 */
+            z-index: 1;
+            /* steps 就是分几步来完成动画，有了 steps 就不要再写 ease 或者 linear 了 */
+            animation: w 5s steps(10) forwards infinite;
+        }
+
+        @keyframes w {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="mask"></div>
+        <div class="word">前端键盘敲烂工资过万</div>
+    </div>
+</body>
+
+</html>
