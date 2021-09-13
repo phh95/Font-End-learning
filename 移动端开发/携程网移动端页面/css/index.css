@@ -1,3 +1,5 @@
+
+
 /* 初始化样式 */
 body {
     min-width: 320px;
@@ -9,10 +11,18 @@ body {
     /* 隐藏水平滚动条 */
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
+    height: 3000px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
+    color: #222;
 }
 
 div {
@@ -32,7 +42,9 @@ div {
     min-width: 320px;
     max-width: 540px;
     height: 44px;
-    /* background-color: skyblue; */
+    background-color:  #f6f6f6;
+    border-top:  1px solid #ccc;
+    border-bottom:  1px solid #ccc;
 }
 
 .search {
@@ -41,6 +53,25 @@ div {
     border: 1px solid #ccc;
     margin: 7px 10px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: "";
+    display: block;
+    float: left;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -60px -279px;
+    background-size: 104px 326px;
+    margin: 5px;
+}
+
+.search span {
+    float: left;
+    font-size: 12px;
+    line-height: 24px;
+    color: #666;
 }
 
 .user {
@@ -61,5 +92,230 @@ div {
     background: url(../images/sprite.png) no-repeat -59px -194px;
     /* 将精灵图缩小为原来的一半 */
     background-size: 104px 326px;
-    margin: 4px auto 0;
+    margin: 4px auto -2px;
+}
+
+.focus {
+    margin-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/* 局部导航栏模块 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color:  #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav a {
+    display: flex;
+    /* 更改主轴的方向 */
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* 属性选择器 */
+li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px 160px;
+}
+
+li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+
+li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+
+li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+
+li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+/* 主导航栏 */
+nav {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+}
+
+.nav-common {
+    display: flex;
+    height: 88px;
+    background-color: skyblue;
+}
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+/* 第一列里面的 a 不需要下边框 */
+.nav-items:nth-child(1) a {
+    border: 0;
+    /* 背景图片靠底端、水平居中对齐 */
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+
+/* -n+2是选择前面两个盒子 */
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+/* 添加线性渐变背景 */
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #fa5a56, #fa9747);
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b8fed, #53bced);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #2bc0a7, #6cd558);
+}
+
+.subnav-entry {
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav-entry li {
+    /* flex的值可以是百分比，一个子元素占20%，5个子元素共占据20%，即在一行上显示 */
+    flex: 20%;
+}
+
+.subnav-entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li [class^="subnav-entry-icon"] {
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-bg.png) no-repeat 0 0;
+    background-size: 28px auto;
+    margin-top: 4px;
+}
+
+li .subnav-entry-icon-icon2 {
+    background-position: 0 -30px;
+}
+
+li .subnav-entry-icon-icon3 {
+    background-position: 0 -60px;
+}
+
+/* 销售模块 */
+.sales-box {
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    position: relative;
+    /* 首行缩进，溢出隐藏，将热门活动四个字隐藏起来 */
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.sales-hd h2::after {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.more {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    background: -webkit-linear-gradient(left, #ff506c, #ff6bc6);
+    border-radius: 20px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+.more::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.sales-bd .row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+/* 让a里面的图片和a一样宽 */
+.row a img {
+    width: 100%;
 }
