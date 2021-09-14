@@ -16,8 +16,10 @@
 
 ## 切图工具  
 
-* Adobe Photoshop   
-* Fireworks：同样是 Adobe 推出的软件，我学习的视频课程中老师用到了，但现在已经不推荐了，Fireworks 能做的，Photoshop 也基本可以做   
+* Adobe Photoshop       
+* Cutterman：一款提高切图效率的 PS 插件，免费         
+* Fireworks：同样是 Adobe 推出的软件，我学习的视频课程中老师用到了，但现在已经不推荐了，Fireworks 能做的，Photoshop 也基本可以做    
+* Snipaste：截图工具，可以用来吸取设计图的颜色，支持 RGB 和十六进制两种颜色表示方法。软件既有 Windows 也有 macOS 版本            
 
 ## 前端学习资料   
 
