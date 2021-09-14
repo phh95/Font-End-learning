@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 屏幕尺寸小于 540px 的时候，背景色为 skyblue */
+        @media screen and (max-width: 539px) {
+            body {
+                background-color: skyblue;
+            }
+        }
+
+        /* 屏幕尺寸 540~970px 的时候，背景色为蓝色 */
+        @media screen and (min-width: 540px) and (max-width: 969px) {
+            body {
+                background-color: blue;
+            }
+        }
+
+        /* 屏幕尺寸大于或等于 970px 的时候，背景色为紫色 */
+        @media screen and (min-width: 970px) {
+            body {
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

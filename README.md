@@ -1,4 +1,6 @@
-# Font-End-learning   
+# Front-End-learning   
+
+> 一个粗心的地方，创建仓库好一阵子之后，才发现仓库的英文名写错了，前端的英文应该是 Front-End，而不是 Font-End。      
 
 ## 代码编辑器  
 
