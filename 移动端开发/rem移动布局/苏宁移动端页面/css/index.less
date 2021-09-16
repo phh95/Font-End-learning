@@ -1,0 +1,104 @@
+// 首页的样式 less 文件
+
+//导入公共样式文件
+@import "common";
+
+body {
+    min-width: 320px;
+    // 这里不像之前写最大宽度 max-width: 750px，这里使用 rem，它的宽度会随着屏幕尺寸大小的变化而变化
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial,Helvetica;
+    background-color: #f2f2f2;
+    height: 3000px;
+}
+
+@baseFont: 50;
+
+.search-area {
+    display: flex;
+    // 采用固定定位
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @baseFont);
+    background-color: #ffc001;
+    .classify {
+        width: (44rem / @baseFont);
+        height: (70rem / @baseFont);
+        margin: (11rem / @baseFont) (25rem / @baseFont) (7rem / @baseFont) (24rem / @baseFont) ;
+        background: url(../images/classify.png) no-repeat;
+        background-size: (44rem / @baseFont) (70rem / @baseFont);
+    }
+    .search {
+        flex: 1;
+        input {
+            outline: none;
+            width: 100%;
+            height: (66rem / @baseFont);
+            // 圆角是盒子高度的一半
+            border-radius: (33rem / @baseFont);
+            // 去除 input 输入框默认的边框
+            border: 0;
+            background-color: #fff2cc;
+            margin-top: (12rem / @baseFont);
+            font-size: (22rem / @baseFont);
+            padding-left: (55rem / @baseFont);
+            color: #757575;
+        }
+    }
+    .login {
+        width: (75rem / @baseFont);
+        height: (70rem / @baseFont);
+        margin: (11rem / @baseFont);
+        font-size: (25rem / @baseFont);
+        text-align: center;
+        line-height: (70rem / @baseFont);
+        color: #fff;
+    }
+}
+
+.banner {
+    width: (750rem / @baseFont);
+    height: (368rem / @baseFont);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ad {
+    display: flex;
+    a {
+        flex: 1;
+        img {
+            width: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+nav {
+    width: (750rem / @baseFont);
+    height: (320rem / @baseFont);
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items:  center;
+        float: left;
+        width: (150rem / @baseFont);
+        height: (140rem / @baseFont);
+        img {
+            width: (82rem / @baseFont);
+            height: (82rem / @baseFont);
+            margin-top: (10rem / @baseFont) 
+        }
+        span {
+            font-size: (22rem / @baseFont);
+            color: #666;
+        }
+    }
+}
