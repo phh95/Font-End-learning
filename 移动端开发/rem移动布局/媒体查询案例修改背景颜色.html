@@ -15,7 +15,13 @@
         }
 
         /* 屏幕尺寸 540~970px 的时候，背景色为蓝色 */
-        @media screen and (min-width: 540px) and (max-width: 969px) {
+        /* @media screen and (min-width: 540px) and (max-width: 969px) {
+            body {
+                background-color: blue;
+            }
+        } */
+        /* 上面的代码比较啰嗦，我们可以利用 CSS 的层叠性，后面的 CSS 会覆盖前面的 CSS 样式 */
+        @media screen and (min-width: 540px) {
             body {
                 background-color: blue;
             }

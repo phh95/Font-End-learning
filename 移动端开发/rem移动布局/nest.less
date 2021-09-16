@@ -1,0 +1,25 @@
+@color: skyblue;
+@font_color: #fff;
+@hover_color: red;
+@font14: 14px;
+@width: 500px;
+@height: 200px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: @width;
+    height: @height;
+    background-color: @color;
+    a {
+        font-size: @font14;
+        text-decoration: none;
+        color: @font_color;
+        &:hover {
+            color: @hover_color;
+        }
+    }
+}

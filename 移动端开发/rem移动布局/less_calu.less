@@ -1,0 +1,25 @@
+@baseFont: 15px;
+
+html {
+    font-size: @baseFont;
+}
+@border: 5px + 5 + 20;
+
+div {
+    width: 200px;
+    height: 200px;
+    border: @border solid blue;
+    background-color: #666 - #222;
+}
+
+img {
+    width: 50./ 2rem;
+    // less 除法推荐使用下面这一种
+    height: (50rem / 2);
+    // height: 50rem * 2;
+}
+
+.banner {
+    // 两个数值的单位不同，以第一个数值的单位为准
+    width: (90rem/@baseFont);
+}

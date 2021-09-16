@@ -1,0 +1,16 @@
+html {
+  font-size: 15px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  border: 30px solid blue;
+  background-color: #444444;
+}
+img {
+  width: 25rem;
+  height: 25rem;
+}
+.banner {
+  width: 6rem;
+}

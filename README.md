@@ -15,6 +15,7 @@
 * Beautify css/sass/scss/less：会自动格式化粘贴到编辑器的 CSS 代码，将一整坨代码分离开来，自动添加换行、空格     
 * Auto Rename Tag：适合于双标签，当你改前面的标签时，它会自动同步改后面的标签      
 * vscode-icons：在 VS Code 中的文件名称前面添加 icon 图标，图标会根据文件的后缀自动匹配（类似的插件：Material Icon Theme，个人觉得 vscode-icons 的图标更好看）   
+* Easy LESS：LESS 文件自动编译成 CSS 文件。     
 
 ## 切图工具  
 

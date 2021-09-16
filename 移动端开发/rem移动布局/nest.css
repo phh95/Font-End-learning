@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 500px;
+  height: 200px;
+  background-color: skyblue;
+}
+.header a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+.header a:hover {
+  color: red;
+}
