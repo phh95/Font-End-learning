@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/411304881
 # Front-End-learning   
 
 > 一个粗心的地方，创建仓库好一阵子之后，才发现仓库的英文名写错了，前端的英文应该是 Front-End，而不是 Font-End。      
@@ -15,7 +16,8 @@
 * Beautify css/sass/scss/less：会自动格式化粘贴到编辑器的 CSS 代码，将一整坨代码分离开来，自动添加换行、空格     
 * Auto Rename Tag：适合于双标签，当你改前面的标签时，它会自动同步改后面的标签      
 * vscode-icons：在 VS Code 中的文件名称前面添加 icon 图标，图标会根据文件的后缀自动匹配（类似的插件：Material Icon Theme，个人觉得 vscode-icons 的图标更好看）   
-* Easy LESS：LESS 文件自动编译成 CSS 文件。     
+* Easy LESS：LESS 文件自动编译成 CSS 文件。       
+* px to rem & rpx (cssrem)：rem 移动端布局的神器，可以将 CSS 样式中的 px 单位自动转换为 rem，再也不需要用到 less 了（尤其是 less 的除法，写起来超麻烦的）。      
 
 ## 切图工具  
 
