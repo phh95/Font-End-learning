@@ -1,0 +1,90 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    height: 1200px;
+    background-color: #F2F4F7;
+}
+
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 75px!important;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header {
+    height: 1.173333rem;
+    border-bottom: .013333rem solid #EAEAEA;
+    text-align: center;
+    line-height: 1.173333rem;
+    font-size: .466667rem;
+    color: #1C1C1C;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .6rem 0 .8rem 0;
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 33.33%;
+        img {
+            width: 1.853333rem;
+            height: 1.853333rem;
+        }
+        span {
+            font-size: .333333rem;
+            color: #707070;
+        }
+        // 选择前三个 item
+        &:nth-child(-n+3) {
+            padding-bottom: .826667rem;
+        }
+    }
+}
+
+.go {
+    width: 9.626667rem;
+    height: 2.026667rem;
+    margin: 0 .24rem .573333rem .24rem;
+    img {
+        width: 100%;
+    }
+}
+
+.content {
+    padding: .533333rem .293333rem;
+    background-color: #fff;
+    margin-top: .133333rem;
+    .con-hd {
+        display: flex;
+        justify-content: space-between;
+        height: .506667rem;
+        line-height: .506667rem;
+        h4 {
+            margin: 0;
+            font-size: .373333rem;
+            color: #333;
+            img {
+                width: .506667rem;
+                height: .506667rem;
+                vertical-align: middle;
+            }
+        }
+        .more {
+        font-size: .293333rem;
+        color: #999;
+        }
+    }
+}

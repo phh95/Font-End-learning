@@ -1,0 +1,82 @@
+body {
+  min-width: 320px;
+  max-width: 750px;
+  margin: 0 auto;
+  height: 1200px;
+  background-color: #F2F4F7;
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 75px!important;
+  }
+}
+a {
+  text-decoration: none;
+}
+.wrap {
+  overflow: hidden;
+  background-color: #fff;
+}
+.header {
+  height: 1.173333rem;
+  border-bottom: 0.013333rem solid #EAEAEA;
+  text-align: center;
+  line-height: 1.173333rem;
+  font-size: 0.466667rem;
+  color: #1C1C1C;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.6rem 0 0.8rem 0;
+}
+.nav .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 33.33%;
+}
+.nav .item img {
+  width: 1.853333rem;
+  height: 1.853333rem;
+}
+.nav .item span {
+  font-size: 0.333333rem;
+  color: #707070;
+}
+.nav .item:nth-child(-n+3) {
+  padding-bottom: 0.826667rem;
+}
+.go {
+  width: 9.626667rem;
+  height: 2.026667rem;
+  margin: 0 0.24rem 0.573333rem 0.24rem;
+}
+.go img {
+  width: 100%;
+}
+.content {
+  padding: 0.533333rem 0.293333rem;
+  background-color: #fff;
+  margin-top: 0.133333rem;
+}
+.content .con-hd {
+  display: flex;
+  justify-content: space-between;
+  height: 0.506667rem;
+  line-height: 0.506667rem;
+}
+.content .con-hd h4 {
+  margin: 0;
+  font-size: 0.373333rem;
+  color: #333;
+}
+.content .con-hd h4 img {
+  width: 0.506667rem;
+  height: 0.506667rem;
+  vertical-align: middle;
+}
+.content .con-hd .more {
+  font-size: 0.293333rem;
+  color: #999;
+}

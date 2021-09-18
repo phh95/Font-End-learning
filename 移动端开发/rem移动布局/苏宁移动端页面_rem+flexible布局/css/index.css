@@ -9,6 +9,8 @@ body {
     background: #f2f2f2;
 }
 
+/* 查看网页的设备屏幕超过 750px 的时候，不按 flexible.js 中设定的 html 字体大小为
+屏幕宽度的 1/10，这里用媒体查询强行将 html 字体大小设置为 75px */
 @media screen and (min-width: 750px) {
     html {
         /* 提升权重 */
@@ -17,6 +19,7 @@ body {
 }
 
 .search-area {
+    display: flex;
     position: fixed;
     top: 0;
     left: 50%;
@@ -24,4 +27,9 @@ body {
     width: 10rem;
     height: 1.173333rem;
     background-color: #ffc001;
+}
+
+.classify {
+    width: .586667rem;
+    height: .933333rem;
 }
