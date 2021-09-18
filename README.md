@@ -36,4 +36,4 @@
 
 ## 前端学习资料   
 
-* [黑马程序员pink老师前端入门教程，零基础必看的h5(html5)+css3+移动端前端视频教程](https://www.bilibili.com/video/BV14J4114768?p=1)     
+* [黑马程序员pink老师前端入门教程，零基础必看的h5(html5)+css3+移动端前端视频教程](https://www.bilibili.com/video/BV14J4114768?p=1)：这个教程我觉得讲得挺好的，看起来也不枯燥。     
