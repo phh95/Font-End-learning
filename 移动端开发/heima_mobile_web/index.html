@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
+    <!-- 引入 swiper 轮播图插件的 css 文件 -->
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/flexible.js"></script>
     <title>Document</title>
 </head>
 
@@ -57,9 +58,123 @@
             </h4>
             <a href="#" class="more">更多>></a>
         </div>
-        <div class="con-bd">
+        <!-- 轮播图模块 -->
+        <div class="pic_focus">
+            <div class="swiper-container get_job_fo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="images/pic.png" alt="">
+                        </a>
+                        <p>老师教你应对面试技巧</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="images/ldh.jpg" alt="">
+                        </a>
+                        <p>老师教你应对面试技巧</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="images/3.jpg" alt="">
+                        </a>
+                        <p>老师教你应对面试技巧</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows 左右两侧添加箭头-->
+            <!-- 把左侧两侧的箭头放到轮播图的外面，不会受到 overflow:hidden 的影响 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
+    <!-- 充电学习模块 -->
+    <section class="content study_con">
+        <div class="con-hd">
+            <h4>
+                <img src="icons/i2.png" alt="">
+                充电学习
+            </h4>
+            <a href="#" class="more">更多>></a>
+        </div>
+        <!-- 充电学习模块的轮播图 -->
+        <div class="study">
+            <!-- Swiper -->
+            <div class="swiper-container study_fo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/pic1.png" alt="">
+                        <h5>说地道英语，告别中式英语</h5>
+                        <p><span>156</span>人学习</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/pic1.png" alt="">
+                        <h5>说地道英语，告别中式英语</h5>
+                        <p><span>156</span>人学习</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/pic1.png" alt="">
+                        <h5>说地道英语，告别中式英语</h5>
+                        <p><span>156</span>人学习</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/pic1.png" alt="">
+                        <h5>说地道英语，告别中式英语</h5>
+                        <p><span>156</span>人学习</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 最底部的 tab 标签 -->
+    <footer class="footer">
+        <a href="#" class="item">
+            <img src="icons/home.png" alt="">
+            <p>首页</p>
+        </a>
+        <a href="#" class="item">
+            <img src="icons/ms.png" alt="">
+            <p>技术面试</p>
+        </a>
+        <a href="#" class="item">
+            <img src="icons/net.png" alt="">
+            <p>模拟面试</p>
+        </a>
+        <a href="#" class="item">
+            <img src="icons/user.png" alt="">
+            <p>我的</p>
+        </a>
+    </footer>
+    <script src="js/flexible.js"></script>
+    <!-- 引入 swiper 插件的 js 文件 -->
+    <script src="js/swiper.min.js"></script>
+    <script>
+        // 把从 swiper 官网复制的代码，放到沙箱函数里
+        (function () {
+            var swiper = new Swiper('.get_job_fo', {
+            // 能够看到的 slider 个数，默认是 3，这里修改为 2
+            slidesPerView: 2,
+            // 每个 slider 之间的距离
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            // 添加左右箭头
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+      },
+        });
+        })(); 
+        // 第二个轮播图
+        (function() {
+            // 页面有多个轮播图，需要修改 new 里面的类名，实例化之后才不会互相影响
+            var swiper = new Swiper('.study_fo', {
+            // 单屏可以看到的 2 个多一点，可以使用小数
+            slidesPerView: 2.4,
+            spaceBetween: 20,
+        });
+        })();
+      </script>
 </body>
 
 </html>

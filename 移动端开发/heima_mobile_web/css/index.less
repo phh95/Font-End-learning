@@ -2,7 +2,6 @@ body {
     min-width: 320px;
     max-width: 750px;
     margin: 0 auto;
-    height: 1200px;
     background-color: #F2F4F7;
 }
 
@@ -72,6 +71,7 @@ a {
         justify-content: space-between;
         height: .506667rem;
         line-height: .506667rem;
+        margin-bottom: .453333rem;
         h4 {
             margin: 0;
             font-size: .373333rem;
@@ -85,6 +85,147 @@ a {
         .more {
         font-size: .293333rem;
         color: #999;
+        }
+    }
+}
+
+// 轮播图
+.pic_focus {
+    position: relative;
+    .swiper-container {
+        // width: 100%;
+        height: 100%;
+        // 根据需求，把轮播图的宽度更改为 540px
+        width: 7.2rem;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+        // 给两侧的图片添加透明度参数
+        opacity: 0.4;
+        a {
+            width: 4.506667rem;
+            height: 5.013333rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p {
+            width: 4.506667rem;
+            font-size: .333333rem;
+            color: #333;
+            margin-top: .32rem;
+        }
+      }
+    //  当前鼠标聚焦的图片，scale 为 1，左右两侧的图片为 0.8
+      .swiper-slide-active,.swiper-slide-duplicate-active{
+        transform: scale(1);
+        // 提升中间图片的层级
+        z-index: 999;
+        opacity: 1;
+      }
+      .swiper-button-next, 
+      .swiper-button-prev {
+          width: .306667rem;
+          height: .573333rem;
+          &::after, 
+          &::after {
+              font-size: 100%;
+              font-weight: 700;
+          }
+      }
+}
+
+.study_con {
+    // 这里的 padding-bottom 设置为 150px，因为最底部的固定定位的
+    // footer 不占有位置
+    padding-bottom: 2rem;
+}
+
+// 充电学习模块的轮播图
+.study {
+    .study_fo {
+        // 加上padding之后，后面设置的 box-shadow 才会呈现为
+        // 四周都有阴影
+        padding: .133333rem;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+  
+      .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        width: 3.626667rem;
+        height: 4.533333rem;
+        border-radius: .133333rem;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        img {
+            width: 100%;
+            height: 2.28rem;
+        }
+        h5 {
+            font-size: .346667rem;
+            margin: .266667rem 0;
+            padding: 0 .133333rem;
+            // 字体不需要加粗
+            font-weight: 400;
+        }
+        p {
+            font-size: .32rem;
+            padding: 0 .133333rem;
+            span {
+                font-size: .346667rem;
+                color: #FF4400;
+            }
+        }
+      }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.466667rem;
+    background-color: #fff;
+    z-index: 99999;
+    padding-top: .266667rem;
+    border-top: .013333rem solid #ccc;
+    display: flex;
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        img {
+            width: .52rem;
+            height: .546667rem;
+        }
+        p {
+            font-size: .293333rem;
+            color: #666;
+            margin-top: .213333rem;
         }
     }
 }
