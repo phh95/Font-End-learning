@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        .container ul li {
+            float: left;
+            /* 将 750px 的宽度划分为 8 等份 */
+            width: 93.75px;
+            height: 30px;
+            background-color: green;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        /* 媒体查询，当屏幕宽度小于 768px，布局容器宽度为 100% */
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+            }
+
+            .container ul li {
+                /* 每个小 li 的宽度设置为 33.33%，流式布局可以实现自适应 */
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+</body>
+</html>
