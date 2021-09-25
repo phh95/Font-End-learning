@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求1 - 100 之间所有整数之和的平均值
+        var sum = 0;
+        var average = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum = sum + i;
+        }
+        average = sum / 100;
+        console.log(average);
+
+        // 分别求出 1-100 之间所有偶数、奇数的和
+        var even = 0; // 声明一个存储所有偶数之和的变量
+        var odd = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even = even + i;
+            } else {
+                odd = odd + i;
+            }
+        }
+        console.log('1-100之间所有偶数之和为：' + even);
+        console.log('1-100之间所有奇数之和为：' + odd);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

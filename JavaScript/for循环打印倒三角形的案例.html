@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 分析比写代码更重要，开始写代码之前，我们要分析一下该如何实现想要的效果
+
+        // 打印倒三角形的案例
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                // 每行的星星数量逐行递减
+                str = str + '★';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+
+        // 华丽的分割线
+        console.log('华丽的分隔线----------------------');
+
+        // 打印正三角形的案例
+        var str1 = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 11 - i; j <= 10; j++) {
+                str1 = str1 + '★';
+            }
+            str1 = str1 + '\n';
+        }
+        console.log(str1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

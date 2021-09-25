@@ -11,7 +11,7 @@
 为了让 VS Code 更好用，安装了下面这几个 VS Code 插件：   
 
 * Open in browser：给右键菜单增加「在默认浏览器中打开 HTML 文档」的选项    
-* JS-CSS-HTML Formatter：每次按下 Ctrl/Command + S 保存变更时，它都会自动格式化 JS、CSS、HTML 和 JSON 文件，把写得不规范的代码变得规范        
+* JS-CSS-HTML Formatter：每次按下 Ctrl/Command + S 保存变更时，它都会自动格式化 JS、CSS、HTML 和 JSON 文件，把写得不规范的代码变得规范，例如自动给 JS 运算符左右两侧添加空格            
 * Beautify css/sass/scss/less：会自动格式化粘贴到编辑器的 CSS 代码，将一整坨代码分离开来，自动添加换行、空格     
 * Auto Rename Tag：适合于双标签，当你改前面的标签时，它会自动同步改后面的标签      
 * vscode-icons：在 VS Code 中的文件名称前面添加 icon 图标，图标会根据文件的后缀自动匹配（类似的插件：Material Icon Theme，个人觉得 vscode-icons 的图标更好看）   

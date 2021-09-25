@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 弹出输入框输入班级人数（num）
+        var num = prompt('请输入班级总人数：');
+        var sum = 0; // 成绩求和
+        var average = 0;
+        for (var i = 1; i <= num; i++) {
+            var score = prompt('请你输入第' + i + '个学生成绩：');
+            // 从prompt取过来的分数是字符串型的，需要转换为 数字型
+            sum = sum + parseFloat(score);
+        }
+        // 这里的 num 不需要转换为字符串
+        average = sum / num; // 求平均成绩
+        alert('班级学生总成绩为：' + sum);
+        alert('班级学生平均成绩为：' + average);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

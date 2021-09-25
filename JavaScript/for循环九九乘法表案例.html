@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '';
+        for (i = 1; i <= 9; i++) { // 外层循环控制行数
+            for (j = 1; j <= i; j++) {
+                // str = str + '★';
+                // 1 x 2 = 2
+                str = str + j + 'x' + i + '=' + i * j + '\t'; //每个公式后面加多一个制表符 \t，不会那么拥挤
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

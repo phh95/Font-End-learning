@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for (var i = 1; i <= 5; i++) {
+        //     console.log('★');;
+        // }
+
+        // 在一行内显示五个星星
+        var str = ''; // 声明一个空变量
+        for (var i = 1; i <= 5; i++) {
+            str = str + '★';
+        }
+        console.log(str);
+
+        // 改进一下，让用户自行决定，一行内输出的星星的个数
+        var num = prompt('请输入星星的个数：');
+        var str1 = '';
+        for (var i = 1; i <= num; i++) {
+            str1 = str1 + '★';
+        }
+        console.log(str1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
