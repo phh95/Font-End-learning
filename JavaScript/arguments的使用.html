@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fn() {
+            console.log(arguments); // arguments 存储了所有传递过来的实参 
+            console.log(arguments.length); // 结果为 3
+            console.log(arguments[2]); // 返回 3
+            // 按照数组的方式遍历 arguments
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+
+        fn(1, 2, 3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

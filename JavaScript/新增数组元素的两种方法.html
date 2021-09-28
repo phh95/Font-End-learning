@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr.length);
+        arr.length = 5; // 对数组长度进行重新赋值
+        // 使用 console.log(arr[i]); 会报错
+        console.log(arr); // 新增的数组元素显示为 undefined
+        console.log(arr[3]);
+        console.log(arr[4]);
+
+        // 通过修改索引号，追加数组元素
+        var arr1 = ['red', 'green', 'blue'];
+        arr1[3] = 'pink';
+        console.log(arr1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

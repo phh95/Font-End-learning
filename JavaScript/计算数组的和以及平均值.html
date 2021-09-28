@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sum = 0;
+        var average = 0;
+        var arr = [2, 6, 1, 7, 4];
+        for (var i = 0; i < arr.length; i++) {
+            // 这里不是 sum = sum + i，因为此时的 i 是索引值，而不是数组元素
+            sum = sum + arr[i];
+        }
+        average = sum / arr.length;
+        console.log(sum);
+        console.log(average);
+        // 上面两行打印语句可以合并成一句话
+        console.log(sum, average); //打印输出多个变量，用逗号分隔即可
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 筛选出 arr 数组中大于等于 10 的元素
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        var j = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                newArr[j] = arr[i];
+                // 新数组 newArr 的索引值应该从 0 开始，依次递增，因此这里引入一个新的变量 j
+                j++;
+            }
+        }
+        console.log(newArr);
+
+        // 另外一种书写程序的方法
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        // 最开始 newArr 的数组长度 newArr.length 为 0，后续随着存入元素，会逐渐递增
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 这个方法真秒，无需引入多一个变量 j
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

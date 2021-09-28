@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var money = 100;
+        do {
+            var num = prompt('请输入你想进行的操作：（输入下方的数字即可） \n1. 存钱 \n2. 取钱 \n3. 查询余额 \n4. 退出');
+            switch (parseInt(num)) {
+                case 1:
+                    var add = prompt('请输入你要存入的金额：');
+                    var allmoney = money + parseFloat(add);
+                    alert('你当前的存款余额是：' + allmoney);
+                    break;
+                case 2:
+                    var out = prompt('请输入你想取出的金额：');
+                    if (out > 100) {
+                        alert('余额不足，请先加钱');
+                    } else {
+                        var allmoney = allmoney - parseFloat(out);
+                        alert('你当前的存款余额是：' + allmoney);
+                    }
+                    break;
+                case 3:
+                    alert('你当前的存款余额是：' + allmoney);
+                    break;
+                case 4:
+                    alert('你正在退出…');
+            }
+        } while (num != 4)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var user = prompt('请输入用户名：');
+        var password = prompt('请输入密码：');
+        while (user != 'admin' && password != '123456') {
+            var user = prompt('请输入用户名：');
+            var password = prompt('请输入密码：');
+        }
+        alert('登录成功');
+
+        // 换成 do…while 的写法，更加简洁
+        do {
+            var user = prompt('请输入用户名：');
+            var password = prompt('请输入密码：');
+        } while (user != 'admin' && password != '123456')
+        alert('登录成功');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

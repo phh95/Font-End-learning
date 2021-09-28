@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue; // i = 3 的时候，跳出本次循环，不执行下面的打印语句
+            }
+            console.log('我正在吃第' + i + '个包子');
+        }
+
+
+        // 案例：求 1-100 中，除了可以被 8 整除的所有整数之和
+        var sum = 0;
+        for (var j = 1; j <= 100; j++) {
+            if (j % 8 == 0) {
+                continue; // 跳过可以被 8 整除的整数
+            }
+            sum = sum + j;
+        }
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
