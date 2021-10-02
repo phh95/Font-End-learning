@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 10;
+        fun();
+
+        function fun() {
+            console.log(num);
+            var num = 20;
+        }
+
+        // 代码实际上是按照下面这样的顺序执行的
+        // var num;
+        // function fun() {
+        //     var num; 
+        //     console.log(num);  // 就近原则，这里的 num 是上面已声明、未赋值的变量 num
+        //     num = 20;
+        // }
+        // num = 10;
+        // fun();
+
+        // 最后返回的结果为 undefined
+
+
+
+        // 另外一个案例
+        var num = 10;
+
+        function fn() {
+            console.log(num);
+            var num = 20;
+            console.log(num);
+        }
+        fn();
+
+        // 代码预解析，相当于以下代码
+        // var num;
+
+        // function fn() {
+        //     var num;
+        //     console.log(num);
+        //     num = 20;
+        //     console.log(num);
+        // }
+        // num = 10;
+        // fn();
+
+        // 返回的结果为 undefined 和 20
+
+
+        // 第 3 个案例
+        function f1() {
+            // var a = b = c = 9;
+            // 这句话相当于 var a = 9;b=9;c=9;  b 和 c 未声明、直接赋值，当全局变量看
+            // 集体声明的正确写法 var a =9,b=9,c=9  中间用逗号隔开
+
+            // 上面这句话最终拆解成
+            var a; // 这个 a 是局部变量
+            a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a); // 最后一个 a 报错，会提示未定义
+
+        // 运行结果为
+        // 9
+        // 9
+        // 9
+        // 9
+        // 9
+        // 报错
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var date1 = new Date(2021, 10, 1); // 传入数字型，存在问题，返回的日期会多出一个月
+        // console.log(date1);
+
+        // var date2 = new Date('2021-10-1 8:8:8');
+        // console.log(date2);
+
+        // Date 对象的方法
+        var date = new Date();
+        console.log(date.getFullYear()); //返回年份
+        console.log(date.getMonth() + 1); // 返回的月份会少 1，要加上 1
+        console.log(date.getDate()); // 返回的是几号
+        console.log(date.getDay()); // 返回的是周几，要注意周日返回的是 0
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

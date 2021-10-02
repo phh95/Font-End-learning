@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10); // 随机返回 1 到 10 之间的一个整数
+
+
+        while (true) { // while 循环默认是一个死循环，最后需要加上一个退出循环的语句 
+            var num = prompt('猜数字游戏开始 请输入 1-10 之间的整数：');
+            if (num > random) {
+                alert('你猜大了，继续加油');
+            } else if (num < random) {
+                alert('你猜小了，继续加油');
+            } else {
+                alert('你真棒，猜对了');
+                break; // 猜对数字，就退出整个循环
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

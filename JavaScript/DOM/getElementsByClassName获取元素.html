@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+
+    <script>
+        // var boxs = document.getElementsByClassName('box');
+        // console.log(boxs);
+
+        // HTML5 新增的选择元素对象的方法
+        // 不考虑兼容性，可以优先使用 document.querySelector() 
+        var firstBox = document.querySelector('.box'); // 类选择器
+        console.log(firstBox); // 返回 <div class="box">盒子1</div>
+        var nav = document.querySelector('#nav'); // id选择器
+        console.log(nav);
+        var li = document.querySelector('li'); // 标签选择器
+        console.log(li); // 只能返回第一个小 li
+
+        // 返回指定选择器的所有元素对象集合
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox); // 得到所有类名为 box 的元素
+        var lis = document.querySelectorAll('li');
+        console.log(lis); // 返回所有的小 li
+    </script>
+</body>
+
+</html>
