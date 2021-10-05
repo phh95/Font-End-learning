@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <script>
+        // 获取 ul 里面的所有小 li
+        var ul = document.querySelector('ul');
+        console.log(ul.childNodes);
+        // childNodes 这个标准方法有个缺点，会返回无关的文本节点
+
+        // 使用非标准的 children，只返回元素节点。实际开发中使用这个
+        console.log(ul.children);
+    </script>
+</body>
+
+</html>

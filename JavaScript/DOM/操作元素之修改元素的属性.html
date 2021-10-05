@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ldh">刘德华</button>
+    <button id="lj">李健</button> <br>
+    <img src="images/ldh.jpeg" alt="" title="刘德华">
+    <script>
+        // 获取元素
+        var ldh = document.getElementById('ldh');
+        var lj = document.getElementById('lj');
+        var img = document.querySelector('img');
+        // 绑定事件  处理程序
+        lj.onclick = function() {
+            img.src = 'images/lj.jpg';
+            img.title = '李健';
+        }
+        ldh.onclick = function() {
+            img.src = 'images/ldh.jpeg';
+            img.title = '刘德华';
+        }
+    </script>
+</body>
+
+</html>

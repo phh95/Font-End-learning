@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button>关灯</button>
+    <script>
+        var btn = document.querySelector('button');
+        var bodyEle = document.body; // 获取 body 元素
+        // 一个按钮实现两种状态，要定义一个变量 flag
+        var flag = 0;
+        btn.onclick = function() {
+            if (flag == 0) {
+                bodyEle.style.backgroundColor = '#000';
+                this.innerHTML = '天黑了 点击开灯';
+                flag = 1;
+            } else {
+                bodyEle.style.backgroundColor = '#fff';
+                this.innerHTML = '关灯';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

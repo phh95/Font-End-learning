@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /* 提前在 CSS 中定义好一个类 change */
+        
+        .change {
+            background-color: skyblue;
+            font-size: 30px;
+            color: #fff;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>文本</div>
+    <script>
+        var test = document.querySelector('div');
+        test.onclick = function() {
+            // 把元素的类名更改为 change，即应用 change 中设置好的样式
+            this.className = 'change';
+        }
+    </script>
+</body>
+
+</html>

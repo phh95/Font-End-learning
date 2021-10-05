@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        var text = document.querySelector('input');
+        // 获得焦点，即鼠标点击输入框
+        text.onfocus = function() {
+            if (this.value == '手机') {
+                this.value = '';
+            }
+            // 向文本框输入内容，文字颜色会变深
+            this.style.color = '#333';
+        };
+        // 失去焦点，鼠标点击输入框外部的区域
+        text.onblur = function() {
+            if (this.value == '') {
+                this.value = '手机';
+            }
+            // 失去焦点的时候，文本颜色要变回原来的浅灰色
+            this.style.color = '#999';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            width: 300px;
+            height: 50px;
+            margin: 5px;
+            background-color: skyblue;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示当前时间</button>
+    <div>时间显示的区域</div>
+    <p>另一个显示时间的区域</p>
+    <script>
+        // 需求：点击按钮，div盒子会显示当前的时间
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function() {
+            div.innerText = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var day = date.getDay(); // 今天是周几，返回的是一个阿拉伯数字
+            return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+        }
+
+
+        // 实现另外一个需求：不用点击button，一刷新页面就会显示当前的时间
+        // 实现的要点：不添加点击事件，直接使用 innerText
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+        // 操作DOM，文字修改，将p标签中原有的内容更改为我们想要的内容
+    </script>
+</body>
+
+</html>

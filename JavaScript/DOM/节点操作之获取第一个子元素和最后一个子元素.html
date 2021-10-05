@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+        <li>我是第1个小li</li>
+        <li>我是第2个小li</li>
+        <li>我是第3个小li</li>
+        <li>我是第4个小li</li>
+    </ol>
+    <script>
+        // 需求：获取第一个li和最后一个li
+        var ol = document.querySelector('ol');
+        console.log(ol.firstChild);
+        // firstChild返回的第一个子元素，是文本节点
+
+        // 下面的方法可以满足我们的需求，但是有兼容性问题，IE 9
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+
+        // 实际开发中，我们用第三种方法
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]);
+    </script>
+</body>
+
+</html>

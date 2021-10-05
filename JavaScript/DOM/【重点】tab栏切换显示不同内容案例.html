@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .tab {
+            width: 1005px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        .tab_list {
+            height: 40px;
+            border: 1px solid #ccc;
+            background-color: #f1f2f0;
+            cursor: pointer;
+        }
+        
+        .tab_list li {
+            float: left;
+            width: 200px;
+            height: 40px;
+        }
+        
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelector('.tab_list').querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+        for (var i = 0; i < lis.length; i++) {
+            // 给每个小li设置一个自定义属性index，从 0 到 4
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function() {
+                // 排他思想，先清除所有样式
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                };
+                // 再给当前点击的小li设置红色样式
+                this.className = 'current';
+
+                // 下面的内容详情页，点击了小li，会显示对应页面的内容
+
+                // 点了第几个小li，就会返回对应小 li 的 index 值
+                var index = this.getAttribute('index');
+                // console.log(index);
+
+                // 再次用到排他思想
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                };
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            margin: 100px auto;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" class="" id="pwd">
+        <img src="images/hidden.png" alt="" id="eye">
+    </div>
+    <script>
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        // 注册事件 处理程序
+        var flag = 0;
+        eye.onclick = function() {
+            // 点击一次之后，flag 的值要发生变化
+            if (flag == 0) {
+                pwd.type = 'text';
+                this.src = 'images/display.png'
+                flag = 1; // flag 重新赋值
+            } else {
+                pwd.type = 'password';
+                this.src = 'images/hidden.png';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

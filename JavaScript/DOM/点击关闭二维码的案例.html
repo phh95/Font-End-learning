@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            /* font-weight: 700; */
+        }
+        
+        .box img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            /* 去除 i 标签自带的斜体样式 */
+            font-style: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            /* 鼠标变成一只小手 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        公众号二维码
+        <img src="images/qrcode_for_gh_d3015e75ee5d_258.jpg" alt="">
+        <i class="close-btn">×</i>
+    </div>
+    <script>
+        var div = document.querySelector('.box');
+        var btn = document.querySelector('.close-btn');
+        btn.onclick = function() {
+            div.style.display = 'none'; // 这里用 hidden 是不起作用的
+        }
+    </script>
+</body>
+
+</html>

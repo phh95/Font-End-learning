@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="请输入内容">
+    <script>
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 注册事件 处理程序
+        btn.onclick = function() {
+            input.value = '点击了按钮';
+            // 点击按钮一次之后，按钮就被禁用，按钮会呈现为灰色
+            // btn.disabled = true; 的另外一种写法如下
+            this.disabled = true;
+            // this 指向的是事件函数的调用者 btn
+        }
+    </script>
+</body>
+
+</html>

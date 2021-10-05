@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/zsh.gif" alt="">
+    <div>早上好</div>
+    <script>
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        // 得到当前的时间
+        var date = new Date();
+        var h = date.getHours();
+        if (h < 12) {
+            img.src = 'images/zsh.gif';
+            div.innerHTML = '亲，上午好，美好的一天开始了';
+        } else if (h < 18) {
+            img.src = 'images/xwh.gif';
+            div.innerHTML = '亲，下午好，记得饮茶';
+        } else {
+            img.src = 'images/wsh.gif';
+            div.innerHTML = '亲，晚上好，一天下来辛苦了';
+        }
+    </script>
+</body>
+
+</html>

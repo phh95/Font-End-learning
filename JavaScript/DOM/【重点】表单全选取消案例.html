@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 300px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #4896d0;
+            color: #fff;
+        }
+        
+        tbody tr {
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>iPhone13</td>
+                    <td>7999</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>iPad Mini6</td>
+                    <td>2999</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>苹果手表</td>
+                    <td>2299</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Mac</td>
+                    <td>8999</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var j_cbAll = document.getElementById('j_cbAll');
+        var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+        // 注册事件
+        j_cbAll.onclick = function() {
+            // this.checked; // 点击之后，会切换为选中状态
+            // console.log(this.checked) 点击复选框，打印得到的是 true
+            for (var i = 0; i < j_tbs.length; i++) {
+                // 把最上面的全选复选框的状态，赋值给下面所有的复选框
+                j_tbs[i].checked = this.checked;
+            }
+        };
+        // 下面的复选框，都要绑定一个点击事件，使用 for 循环
+        for (var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function() {
+                // 引入变量flag，来控制全选复选框是否选中
+                var flag = true;
+                // 再嵌套一个 for 循环，每次勾选复选框，都要循环检查4个复选框是否全被选中
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (j_tbs[i].checked == false) {
+                        flag = false;
+                        break;
+                        //break 用来退出for循环，这样可以提高执行效率，只要有一个没有选中，剩下的就无需循环判断了
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

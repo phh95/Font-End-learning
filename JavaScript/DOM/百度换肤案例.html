@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        body {
+            background: url(images/1.jpg) no-repeat center top;
+        }
+        
+        .baidu {
+            width: 410px;
+            height: 65px;
+            background-color: #fff;
+            margin: 100px auto;
+            padding: 2px;
+        }
+        
+        .baidu li {
+            float: left;
+            cursor: pointer;
+            margin: 0 1px;
+        }
+        
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+    <script>
+        // var lis = document.getElementsByTagName('li');
+        // var bodyEle = document.body;
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].onclick = function() {
+        //         bodyEle.style.backgroundImage = 'url(images/2.jpg)';
+        //     }
+        // }
+
+        // 获取 img 对象的路径，把它的路径赋值给 body 的 url
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        var bodyEle = document.body;
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                // 下面的路径格式为 url(路径)
+                // 这里的 this 不能用 imgs[i]
+                // document.body.style.backgroundImage = 'url(' + this.src + ')';
+                // 简化上面的代码
+                bodyEle.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>
