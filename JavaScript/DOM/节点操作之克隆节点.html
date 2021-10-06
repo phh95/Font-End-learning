@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        // 克隆 node.cloneNode()
+        // 克隆 ul 里面的第 1 个小 li
+        // var lili = ul.children[0].cloneNode();  // 括号参数为空，为浅拷贝
+        var lili = ul.children[0].cloneNode(true); // 为深拷贝，会复制标签里面的内容
+        // 添加节点，把克隆出来的 lili 作为子节点添加到 ul
+        ul.appendChild(lili);
+    </script>
+</body>
+
+</html>

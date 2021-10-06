@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">子盒子</div>
+    </div>
+    <script>
+        var son = document.querySelector('.son');
+        // 第3个参数为true，捕获阶段，路径是 document - html - body - father - son
+        // son.addEventListener('click', function() {
+        //     alert('son');
+        // }, true)
+        var father = document.querySelector('.father');
+        // 父元素绑定了点击事件，由于处于捕获阶段，会先弹出父级的事件，接着再弹出子级的事件
+        // father.addEventListener('click', function() {
+        //     alert('father');
+        // }, true)
+
+        // 第3个参数为false 或者不写，冒泡阶段，路径是 son - father - body - html - document
+        son.addEventListener('click', function() {
+            alert('son');
+        }, false)
+        father.addEventListener('click', function() {
+            alert('father');
+        }, false)
+
+        // 在实际开发中，更关注 事件冒泡
+    </script>
+</body>
+
+</html>

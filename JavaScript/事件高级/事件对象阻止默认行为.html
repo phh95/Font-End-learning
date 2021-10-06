@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://baidu.com">百度一下</a>
+    <script>
+        var a = document.querySelector('a');
+        // a.addEventListener('click', function(e) {
+        //     // 阻止超链接跳转，点击超链接没有反应
+        //     e.preventDefault();
+        // })
+
+        // 同样存在兼容性问题
+        a.onclick = function(e) {
+            // 普通浏览器   preventDefault() 是方法
+            // e.preventDefault();
+            // 低版本浏览器 IE 6/7/8   returnValue 属性
+            // e.returnValue;
+            // 还可以使用 return false，也能阻止默认行为，没有兼容性问题
+            return false;
+            // return 后面的代码无法执行，而且只限于传统的注册方式
+        }
+    </script>
+</body>
+
+</html>

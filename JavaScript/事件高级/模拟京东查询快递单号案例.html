@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search {
+            position: relative;
+            width: 300px;
+            margin: 100px auto;
+        }
+        
+        .con {
+            position: absolute;
+            top: -38px;
+            width: 153px;
+            height: 25px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgb(0, 0, 0, .2);
+            font-size: 18px;
+            /* 盒子最开始是隐藏起来的 */
+            display: none;
+        }
+        
+        .con::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 25px;
+            left: 15px;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div>
+        <input type="text" placeholder="请输入你的快递单号" class="jd">
+    </div>
+    <script>
+        // 表单检测到用户输入内容，上面隐藏的 con 盒子就会显示出来
+        var jd_input = document.querySelector('.jd');
+        var con = document.querySelector('.con');
+        jd_input.addEventListener('keyup', function() {
+            if (this.value != '') {
+                // 输入内容，con 盒子就显示出来了
+                con.style.display = 'block';
+                // 将表单输入的内容，传递给上面的 con 盒子
+                con.innerHTML = jd_input.value;
+                // 上面代码的 jd_input 可以替换为 this
+            } else {
+                // 表单里面的内容为空的话，con 盒子再次隐藏
+                con.style.display = 'none';
+            }
+        });
+        // 当表单失去焦点的时候，隐藏 con 盒子；获得焦点的时候，再次显示 con 盒子
+        jd_input.addEventListener('blur', function() {
+            con.style.display = 'none';
+        });
+        // 表单获得焦点，还需要判断一下里面的文本是否为空
+        jd_input.addEventListener('focus', function() {
+            if (this.value != '') {
+                con.style.display = 'block';
+            }
+
+        })
+    </script>
+</body>
+
+</html>

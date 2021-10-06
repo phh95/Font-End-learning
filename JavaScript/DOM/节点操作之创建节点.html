@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <!-- 需求：往 ul 标签中创建一个 li 标签 -->
+    <script>
+        // 创建元素节点
+        var li = document.createElement('li');
+        // 添加节点 node.appendChild(child) node 是父级，child 是子级
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
+        // 将我们创建的li标签，以子节点的形式添加到ul标签中
+
+        // 将新的节点添加到父节点指定的子节点前面  node.insertBefore(child, 指定元素)
+        var lili = document.createElement('li');
+        ul.insertBefore(lili, ul.children[0]);
+        // ul.children[0] 代表 ul 中的第一个子节点 <li>123</li>
+    </script>
+</body>
+
+</html>

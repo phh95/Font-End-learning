@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    这是一段不愿意分享的文字
+    <script>
+        // 禁止使用鼠标右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        })
+
+        // 禁止选中文本
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        // 先准备好学生的数据，存储在数组里面，每个数组元素是一个对象
+        var datas = [{
+            name: '鸣人',
+            subject: 'JavaScript',
+            score: 59
+        }, {
+            name: '佐助',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '小樱',
+            subject: 'JavaScript',
+            score: 90
+        }, {
+            name: '佐井',
+            subject: 'JavaScript',
+            score: 95
+        }];
+        // 往 tbody 里面创建行，有几个人就创建多少行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            // 1. 创建行
+            var tr = document.createElement('tr');
+            // 再添加行
+            tbody.appendChild(tr);
+            // 2. 行里面创建单元格 td，单元格的个数取决于，每个对象里面的属性个数
+            // 遍历对象 for (var k in obj)，这里的 obj 是 datas[i]
+            for (var k in datas[i]) {
+                // 创建单元格
+                var td = document.createElement('td');
+                // 数据填充，把对象 datas[i] 的属性值 datas[i][k] 给 td
+                td.innerHTML = datas[i][k];
+                // 将单元格添加到行里面
+                tr.appendChild(td);
+            }
+            // 还差最后一列，带有删除两个字的单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+        // 删除操作
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                // 删除节点操作，删除 a 标签所在的行 node.removeChild(child)
+                // a 的父节点是单元格 td，td 的父节点才是一整行，所以是 a 标签的爸爸的爸爸
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+        // 复习一下遍历对象
+        // for (var k in obj) {
+        //     k 得到的是属性名
+        //     obj[k] 得到的是属性值
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">这是一个盒子</div>
+    <div class="box2">这是另外一个盒子</div>
+    <script>
+        // 需求：往盒子里面创建 100 个 a 标签
+        // 使用 innerHTML
+        var box = document.querySelector('.box');
+        for (var i = 0; i <= 100; i++) {
+            // 拼接字符串，这种效率比较低
+            box.innerHTML += '<a href="#">超链接</a>'
+        }
+
+        // 拼接字符串的效率比较低，我们采用数组存放数据，再将数组转换为字符串
+        var arr = [];
+        for (var i = 0; i <= 100; i++) {
+            arr.push('<a href="#">超链接</a>');
+        }
+        // 最后将数组转换为字符串
+        box.innerHTML = arr.join();
+
+
+        // 使用 createElement
+        var box2 = document.querySelector('.box2');
+        for (var i = 0; i <= 100; i++) {
+            // 创建a节点
+            var a = document.createElement('a');
+            // 再追加
+            box2.appendChild(a);
+        }
+    </script>
+</body>
+
+</html>

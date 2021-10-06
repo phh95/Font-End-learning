@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        // 需求：当用户按下了 s 键，搜索框可以获得焦点
+        var search = document.querySelector('input');
+        document.addEventListener('keyup', function(e) {
+            // console.log(e.keyCode);
+            if (e.keyCode == 83) { // s 键对应的 ASCII 码为 83
+                search.focus(); // 搜索框获得焦点
+            }
+            // 这里的事件用 keyup 比较好，如果用 keydown 的话，
+            // 触发事件的同时，也会在搜索框中输入 s
+        })
+    </script>
+</body>
+
+</html>

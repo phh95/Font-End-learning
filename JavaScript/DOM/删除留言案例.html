@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 200px;
+            height: 100px;
+        }
+        
+        ul li {
+            width: 150px;
+            background-color: skyblue;
+            margin: 10px;
+        }
+        
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 点击发布按钮之后，会创建一个新的小li，将我们输入的内容传给小li
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        btn.onclick = function() {
+            if (text.value == '') {
+                alert('没有输入内容，请重新输入');
+            } else {
+                // 创建元素
+                var li = document.createElement('li');
+                // 将文本域 textarea 中输入的内容，赋值给 li
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>"; // href值为javascript:; 阻止链接跳转
+                // 添加元素
+                // ul.appendChild(li);
+                // 额外的需求：将最新发布的留言，排在最上面
+                ul.insertBefore(li, ul.children[0]);
+
+                // 删除元素，删除a链接所在的li
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        // 删除节点 node.removeChild(child)
+                        // 这里的 this.parentNode 是 a 链接的父节点 li，而
+                        // li 又是 ul 的子节点
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
