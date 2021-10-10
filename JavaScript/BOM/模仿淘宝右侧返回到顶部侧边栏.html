@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            width: 45px;
+            height: 130px;
+            margin-left: 600px;
+            background-color: yellow;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: skyblue;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: green;
+        }
+        
+        .main {
+            height: 2000px;
+            background-color: pink;
+        }
+        
+        .slider-bar span {
+            display: none;
+            position: absolute;
+            /* 位于底部 */
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        var slidebar = document.querySelector('.slider-bar');
+        var goBack = document.querySelector('.goBack');
+        var banner = document.querySelector('.banner');
+        // console.log(banner.offsetTop);
+        // banner.offsetTop 就是被卷去头部的大小
+        var bannerTop = banner.offsetTop;
+        var slidebarTop = slidebar.offsetTop;
+        // banner_slidebar 侧边栏变成 固定定位 之后，距离页面顶部的距离
+        var banner_slidebar = slidebarTop - bannerTop;
+
+        // 获取 main 主体元素
+        var main = document.querySelector('.main');
+        var mainTop = main.offsetTop;
+        // 给页面滚动事件
+        document.addEventListener('scroll', function() {
+            // 当页面被卷去的头部大于等于 250 的时候，更改为 固定定位
+            if (window.pageYOffset >= bannerTop) {
+                slidebar.style.position = 'fixed';
+                slidebar.style.top = banner_slidebar + 'px';
+            } else {
+                slidebar.style.position = 'absolute';
+                slidebar.style.top = '300px';
+            }
+            // 当页面滚动到main模块，就显示 返回顶部 的文字
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+
+</html>

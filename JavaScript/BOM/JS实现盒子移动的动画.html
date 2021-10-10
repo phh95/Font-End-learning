@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        
+        span {
+            position: absolute;
+            top: 300px;
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击按钮之后，盒子才动起来</button>
+    <div></div>
+    <span>盒子</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        // var timer = setInterval(function() {
+        //     // div.offsetLeft 获得盒子当前的位置
+        //     if (div.offsetLeft >= 400) {
+        //         //停止动画 本质就是停止定时器
+        //         clearInterval(timer);
+        //     } else {
+        //         div.style.left = div.offsetLeft + 2 + 'px';
+        //     }
+        // }, 30);
+
+        // 动画的简单封装
+        // function animate(obj, target) {
+        //     var timer = setInterval(function() {
+        //         // div.offsetLeft 获得盒子当前的位置
+        //         if (obj.offsetLeft >= target) {
+        //             //停止动画 本质就是停止定时器
+        //             clearInterval(timer);
+        //         } else {
+        //             obj.style.left = obj.offsetLeft + 2 + 'px';
+        //         }
+        //     }, 30);
+        // }
+        // 调用函数
+        animate(div, 300);
+
+        // 对封装函数进行优化
+
+        function animate(obj, target) {
+            clearInterval(obj.timer); // 先清除以前的定时器
+            obj.timer = setInterval(function() {
+                // div.offsetLeft 获得盒子当前的位置
+                if (obj.offsetLeft >= target) {
+                    //停止动画 本质就是停止定时器
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + 2 + 'px';
+                }
+            }, 30);
+        }
+        // 调用函数
+        animate(div, 300);
+
+        btn.addEventListener('click', function() {
+            animate(span, 800);
+            // 不过这里有个bug，当我们不断点击按钮，元素运动的速度会越来越快，因为开启了
+            // 多个定时器
+            // 解决方案：让我们元素只有一个定时器执行，即在执行定时器之前，先清除以前的定时器
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide-bar {
+            position: relative;
+            float: right;
+            width: 40px;
+            height: 40px;
+            background-color: skyblue;
+            margin: 300px auto;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100px;
+            height: 40px;
+            background-color: purple;
+            color: #fff;
+        }
+    </style>
+    <!-- 引入动画函数的 js 文件 -->
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="slide-bar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var slidebar = document.querySelector('.slide-bar');
+        var con = document.querySelector('.con');
+        slidebar.addEventListener('mouseenter', function() {
+            animate(con, -100, function() {
+                // 当动画执行完毕，把向左的箭头更改为向右
+                slidebar.children[0].innerHTML = '→';
+            });
+        })
+
+        slidebar.addEventListener('mouseleave', function() {
+            animate(con, 0, function() {
+                slidebar.children[0].innerHTML = '←';
+            });
+        })
+    </script>
+</body>
+
+</html>

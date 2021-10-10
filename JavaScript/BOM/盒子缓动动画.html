@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            top: 300px;
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn800">点击按钮之后，盒子才动起来</button>
+    <button class="btn300">点击盒子开倒车</button>
+    <span>盒子</span>
+    <script>
+        var span = document.querySelector('span');
+        var btn800 = document.querySelector('.btn800');
+        var btn300 = document.querySelector('.btn300');
+
+        function animate(obj, target) {
+            clearInterval(obj.timer); // 先清除以前的定时器
+            obj.timer = setInterval(function() {
+                // step 盒子每次移动的距离，也叫步长
+                // 涉及到除法，结果会有小数，由于精度问题，会导致盒子移动的距离出现误差，我们需要使用向上取整 math.ceil()
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // div.offsetLeft 获得盒子当前的位置
+                if (obj.offsetLeft == target) {
+                    //停止动画 本质就是停止定时器
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 15);
+        }
+
+        btn800.addEventListener('click', function() {
+            animate(span, 800);
+            // 不过这里有个bug，当我们不断点击按钮，元素运动的速度会越来越快，因为开启了
+            // 多个定时器
+            // 解决方案：让我们元素只有一个定时器执行，即在执行定时器之前，先清除以前的定时器
+        })
+        btn300.addEventListener('click', function() {
+            animate(span, 300);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 有了窗口加载事件 onload，可以把 script 标签放在页面任意位置
+        // window.onload = function() {
+        //     var btn = document.querySelector('button');
+        //     btn.onclick = function() {
+        //         alert('你点击了按钮');
+        //     }
+        // }
+
+        // 另外一种写法
+        window.addEventListener('load', function() {
+            alert('又是新的一天，继续加油哦');
+        })
+
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('你点击了按钮');
+            })
+        })
+    </script>
+    <button>点击</button>
+</body>
+
+</html>

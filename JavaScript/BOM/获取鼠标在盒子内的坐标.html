@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        // box.addEventListener('click', function(e) {
+        //     // console.log(e.pageX); // 鼠标点击的位置，与浏览器窗口左侧的距离
+        //     // console.log(e.pageY);
+        //     // console.log(box.offsetLeft); // 盒子与浏览器窗口左侧的距离
+        //     // console.log(box.offsetTop);
+        //     var x = e.pageX - box.offsetLeft;
+        //     var y = e.pageY - box.offsetTop;
+        //     box.innerHTML = '鼠标的x坐标是' + x + '，y坐标是' + y;
+        // })
+
+        // 将点击事件更改为 鼠标移动事件
+        box.addEventListener('mousemove', function(e) {
+            var x = e.pageX - box.offsetLeft;
+            var y = e.pageY - box.offsetTop;
+            box.innerHTML = '鼠标的x坐标是' + x + '，y坐标是' + y;
+        })
+    </script>
+</body>
+
+</html>

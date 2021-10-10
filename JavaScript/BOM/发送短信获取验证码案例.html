@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    请输入手机号：<input type="number"> <button>发送</button>
+    <script>
+        // button 里面的内容，是通过 innerHTML 而非 value 修改
+        var btn = document.querySelector('button');
+        var time = 3;
+        btn.addEventListener('click', function() {
+            btn.disabled = true;
+            var timer = setInterval(function() {
+                if (time == 0) {
+                    // 清除定时器和复原按钮的内容
+                    clearInterval(timer);
+                    btn.disabled = false; // 重新启用按钮
+                    btn.innerHTML = '发送';
+                    time = 3; // 这一句别忘了，要重新给 time 赋值
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            margin: 100px auto;
+        }
+        
+        .hour,
+        .minute,
+        .second {
+            float: left;
+            width: 40px;
+            height: 40px;
+            background-color: #2f3430;
+            color: white;
+            margin: 4px;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="hour">1</div>
+        <div class="minute">2</div>
+        <div class="second">3</div>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-10-8 00:00:00'); // 输入的时间，距离1970年总的毫秒数
+        countDown() // 先调用一次函数，就不会出现最开始的 123 了
+            // 开启定时器，每隔 1 秒，调用一次函数
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date(); // 不传入参数，返回的就是当前时间距离1970年总的毫秒数
+            var times = (inputTime - nowTime) / 1000; // 两个时间戳的差，将毫秒转换为秒
+            var h = parseInt(times / 60 / 60 % 24); // 小时
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h; // 把剩余的小时 传给小时的盒子
+            var m = parseInt(times / 60 % 60); // 分
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60); // 秒
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

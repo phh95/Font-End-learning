@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    首页
+    <div></div>
+    <script>
+        // location.search 得到的是 ?uname=nihao 
+        // 去掉问号，可以使用 substr    substr('起始的位置'，截取几个字符)
+        // substr 第二个参数省略的话，默认从起始的位置截取到末尾
+        // 利用等号 = 分隔 uname 和 nihao   split('=')  得到的是一个数组
+        div = document.querySelector('div');
+        var params = location.search.substr(1);
+        var arr = params.split('=');
+        // console.log(arr); // ["uname", "nihao"]
+        div.innerHTML = arr[1] + '你好';
+    </script>
+</body>
+
+</html>
