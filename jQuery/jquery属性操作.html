@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <a href="https://www.penghh.fun" title="博客">这是我的个人博客</a>
+    <input type="checkbox" checked>
+    <div index="1" data-index="2">这是一个盒子</div>
+    <span>123</span>
+    <script>
+        $(function() {
+            // 获取元素固有属性的值
+            console.log($("a").prop("href"));
+            // 更改属性的值
+            $("a").prop("title", "我的博客");
+
+            // 获取表单的状态，被勾选返回 true，未被勾选返回 false
+            $("input").change(function() {
+                console.log($(this).prop("checked"));
+            })
+
+
+            // 获取元素自定义属性 attr()
+            // div 中的 index 是自定义属性，不是固有属性
+            console.log($("div").attr("index"));
+            console.log($("div").attr("data-index")); // 返回的是文本型
+
+            // 数据缓存 data()
+            $("span").data("uname", "phh");
+            console.log($("span").data("uname"));
+            // 数据缓存，获取 H5 新增的自定义属性 data-index 的值
+            console.log($("div").data("index")); // 返回的是数字型
+        })
+    </script>
+</body>
+
+</html>

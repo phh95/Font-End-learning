@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #000;
+        }
+        
+        .wrap {
+            width: 630px;
+            height: 394px;
+            margin: 200px auto;
+            border: 1px solid #fff;
+            padding: 10px 0 0 10px;
+        }
+        
+        li {
+            float: left;
+            list-style: none;
+            margin: 0 10px 10px 0;
+        }
+        
+        li img {
+            display: block;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        // 需求：鼠标经过任意一张图片，其他图片透明度都降低，离开之后，恢复
+        // 最开始的透明度
+        $(function() {
+            $(".wrap li").hover(function() {
+                // 动画队列，停止排队，在动画前面加 stop()
+                $(this).siblings().stop().fadeTo(400, 0.5);
+            }, function() {
+                $(this).siblings().stop().fadeTo(400, 1);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+            <li><img src="images/03.jpg" alt=""></li>
+            <li><img src="images/04.jpg" alt=""></li>
+            <li><img src="images/05.jpg" alt=""></li>
+            <li><img src="images/06.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>

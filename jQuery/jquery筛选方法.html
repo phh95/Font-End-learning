@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>这是第 1 个小 li</li>
+        <li>这是第 2 个小 li</li>
+        <li>这是第 3 个小 li</li>
+        <li>这是第 4 个小 li</li>
+        <li>这是第 5 个小 li</li>
+        <li>这是第 6 个小 li</li>
+    </ul>
+    <script>
+        // 选择第 N 个元素，有两种方式
+        // 一种是 筛选选择器
+        $('ul li:eq(2)').css('color', 'blue');
+        // 另一种是 使用方法的方式选择  更推荐这种写法
+        $('ul li').eq(3).css('color', 'pink');
+    </script>
+</body>
+
+</html>

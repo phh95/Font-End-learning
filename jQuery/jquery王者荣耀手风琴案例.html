@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        img {
+            display: block;
+        }
+        
+        .king {
+            width: 852px;
+            height: 69px;
+            margin: 100px auto;
+            background: url(images/king/bg.png) no-repeat;
+            padding: 10px;
+        }
+        
+        .king li {
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 69px;
+            margin-right: 10px;
+        }
+        
+        .king .current {
+            width: 224px;
+        }
+        
+        .small {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 69px;
+            height: 69px;
+            border-radius: 5px;
+        }
+        
+        .big {
+            width: 224px;
+            display: none;
+        }
+        
+        .king ul .current .small {
+            display: none;
+        }
+        
+        .king ul .current .big {
+            display: block;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div class="king">
+        <ul>
+            <li class="current">
+                <a>
+                    <img src="images/king/m1.jpg" alt="" class="small">
+                    <img src="images/king/m.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/l1.jpg" alt="" class="small">
+                    <img src="images/king/l.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/c1.jpg" alt="" class="small">
+                    <img src="images/king/c.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/w1.jpg" alt="" class="small">
+                    <img src="images/king/w.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/z1.jpg" alt="" class="small">
+                    <img src="images/king/z.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/h1.jpg" alt="" class="small">
+                    <img src="images/king/h.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/king/t1.jpg" alt="" class="small">
+                    <img src="images/king/t.png" alt="" class="big">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $("li").mouseenter(function() {
+            $(this).stop().animate({
+                width: 224
+            }).find(".small").stop().fadeOut().siblings(".big").stop().fadeIn();
+            $(this).siblings("li").stop().animate({
+                width: 69
+            }).find(".small").stop().fadeIn().siblings(".big").stop().fadeOut();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .nav {
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        
+        .nav li {
+            float: left;
+            width: 100px;
+        }
+        
+        .nav>li>a:hover {
+            background-color: #eee;
+        }
+        
+        .nav ul {
+            display: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">博客</a>
+            <ul>
+                <li>写文</li>
+                <li>数据</li>
+                <li>评论</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">邮箱</a>
+            <ul>
+                <li>注册</li>
+                <li>申请</li>
+                <li>在线</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        // jQuery 的隐式迭代，给每个 li 都绑定了鼠标经过的事件，不需要我们手写for循环
+        // 鼠标移动到 .nav 中的 li 上方（鼠标经过），下拉菜单就显示出来
+        $('.nav>li').mouseover(function() {
+            $(this).children('ul').show(); // 显示使用 show() 方法
+        });
+        // 鼠标离开，nav>li ul 隐藏起来
+        $('.nav>li').mouseout(function() {
+            $(this).children('ul').hide();
+        });
+    </script>
+</body>
+
+</html>

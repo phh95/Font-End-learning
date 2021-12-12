@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button>动起来</button>
+    <div></div>
+    <script>
+        $("button").click(function() {
+            $("div").animate({
+                // 盒子移动 400px
+                left: 400,
+                top: 300,
+                opacity: 0.4,
+                width: 400
+            }, 500)
+        })
+    </script>
+</body>
+
+</html>

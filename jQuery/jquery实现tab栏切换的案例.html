@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .tab {
+            width: 1005px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        .tab_list {
+            height: 40px;
+            border: 1px solid #ccc;
+            background-color: #f1f2f0;
+            cursor: pointer;
+        }
+        
+        .tab_list li {
+            float: left;
+            width: 200px;
+            height: 40px;
+        }
+        
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.tab_list li').click(function() {
+
+            // 点击 li，给当前 li 添加 current 类，表现为 li 的背景色变成红色，其余的盒子移除这个类
+            // $(this).addClass('current');
+            // 其余的兄弟移除 current 类
+            // $(this).siblings().removeClass('current');
+            // 链式编程操作，把上面的两句话合并成一句话
+            $(this).addClass('current').siblings().removeClass('current');
+
+            // 点击的同时，得到当前 li 的索引号
+            var index = $(this).index();
+            // console.log(index);
+
+            // 让下面对应的内容区域 隐藏或显示
+            $('.tab_con .item').eq(index).show().siblings().hide();
+        })
+    </script>
+</body>
+
+</html>

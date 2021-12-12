@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <script>
+        var div = document.querySelector('div');
+        // 之前这种方式默认只会给第一个div盒子设置背景色，如果要把所有盒子
+        // 的背景色设置为 pink，需要使用 for 循环遍历
+        div.style.backgroundColor = 'pink';
+
+        // 获取所有 div 盒子
+        // $('div');
+        // 给盒子设置背景颜色
+        // 隐式迭代：把匹配到的所有元素，在内部进行遍历循环，给每一个元素添加 CSS。
+        $('div').css('background', 'skyblue');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>这是第 1 个小 li</li>
+        <li>这是第 2 个小 li</li>
+        <li>这是第 3 个小 li</li>
+        <li>这是第 4 个小 li</li>
+        <li>这是第 5 个小 li</li>
+        <li>这是第 6 个小 li</li>
+    </ul>
+    <script>
+        // 把第一个小li文本颜色设置为红色
+        $('ul li:first').css('color', 'red');
+
+        // 把第 3 个小li文本颜色设置为skyblue，它的索引号是2
+        $('ul li:eq(2)').css('color', 'skyblue');
+    </script>
+</body>
+
+</html>

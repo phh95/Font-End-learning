@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入jquery文件 -->
+    <script src="jquery.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // JS 代码放在前面
+        // 1. 等着页面 DOM 加载完毕，再去执行 js 代码
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // });
+        // 2. 第二种
+        $(function() {
+            $('div').hide();
+        })
+    </script>
+    <div></div>
+
+
+    <!-- <script>
+        // 把盒子隐藏起来
+        $('div').hide();
+    </script> -->
+</body>
+
+</html>
