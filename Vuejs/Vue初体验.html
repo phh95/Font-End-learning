@@ -9,12 +9,29 @@
 </head>
 
 <body>
+    <!-- <div id="app">{{message}}</div> -->
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h3>{{name}}</h3>
+    </div>
     <!-- 引入 Vue -->
     <script src="js/vue.js"></script>
     <script>
+        // 编程范式：声明式编程
         // ES6 使用 let(变量) 和 const(常量) 声明变量
-        // 创建实例
-        let app = new Vue
+        // new Vue 创建实例，声明一个变量来接收它
+        let app = new Vue({ // 传入的参数是一个对象
+            el: '#app', // 用于挂载要管理的元素
+            data: { // 定义数据
+                message: '你好啊，李银河!',
+                name: 'angola'
+            }
+        })
+
+        // 使用原生 js 的写法（编程范式：命令式编程，写好下一步要进行什么操作）
+        // 1. 创建 div 元素，设置 id 属性
+        // 2. 定义一个变量叫 message
+        // 3. 将 message 变量放在前面的 div 元素中显示
     </script>
 </body>
 
