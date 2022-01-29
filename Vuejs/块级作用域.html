@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        var buttons = document.getElementsByTagName('button');
+        // for (var i = 0; i < buttons.length; i++) {
+        //     buttons[i].addEventListener('click', function() {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+        // for 循环没有块级作用域
+        // 一个大括号{}包裹的代码，被称为 代码块
+        // var i = 
+        // {
+        //     i=0 这里的 i 会随着外部的 i 变化而变化
+        //     buttons[i].addEventListener('click', function() {
+        //         console.log('第' + i + '个按钮被点击');
+        // }
+
+        // for (var i = 0; i < buttons.length; i++) {
+        //     // 函数作用域，闭包
+        //     (function(i) {
+        //         buttons[i].addEventListener('click', function() {
+        //             console.log('第' + i + '个按钮被点击');
+        //         })
+        //     })(i)
+        // }
+
+        // ES6的写法，使用 let 声明变量，有块级作用域
+        var buttons = document.getElementsByTagName('button');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+        // ES6的块级作用域
+        // { i=0
+        //   buttons[i].addEventListener('click', function() {
+        //      console.log('第' + i + '个按钮被点击');
+        // }
+
+        // { i=1
+        //   buttons[i].addEventListener('click', function() {
+        //      console.log('第' + i + '个按钮被点击');
+        // }
+
+        // { i=2
+        //   buttons[i].addEventListener('click', function() {
+        //      console.log('第' + i + '个按钮被点击');
+        // }
+
+        // { i=3
+        //   buttons[i].addEventListener('click', function() {
+        //      console.log('第' + i + '个按钮被点击');
+        // }
+
+        // { i=4
+        //   buttons[i].addEventListener('click', function() {
+        //      console.log('第' + i + '个按钮被点击');
+        // }
+    </script>
+</body>
+
+</html>

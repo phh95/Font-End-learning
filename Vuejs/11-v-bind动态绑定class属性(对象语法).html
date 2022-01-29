@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h2>{{message}}</h2>
+        <h2 :class="active">{{message}}</h2> -->
+
+        <!-- <h2 v-bind:class="{类名1: value1, 类名2: value2}">{{message}}</h2> -->
+        <h2 v-bind:class="{active: isActive, line: isLine}">{{message}}</h2>
+        <!-- 传入的对象比较长，可以通过调用函数 getClasses() 的方式，简化写法 -->
+        <h2 v-bind:class="getClasses()">{{message}}</h2>
+        <!-- 需求：点击按钮，{{message}}的颜色会在红色和黑色之间来回切换 -->
+        <button v-on:click="btnClick">按钮</button>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                isActive: 'true',
+                isLine: 'true'
+            },
+            methods: {
+                btnClick: function() {
+                    this.isActive = !this.isActive
+                },
+                getClasses: function() {
+                    return {
+                        active: this.isActive,
+                        line: this.isLine
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

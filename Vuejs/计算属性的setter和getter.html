@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{fullName}}</h2>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                firstName: 'Kobe',
+                lastName: 'Bryant'
+            },
+            computed: {
+                // fullName: function() {
+                //     return this.firstName + ' ' + this.lastName
+                // }
+                // 上面的写法，是计算属性的简写
+                // 完整的写法如下
+                fullName: {
+                    // 计算属性一般是没有 set 方法，没有set方法的情况下，就是一个
+                    // 只读属性
+                    set: function(newValue) {
+                        // split 分割后的数据类型是数组
+                        const names = newValue.split(' ');
+                        this.firstName = names[0];
+                        this.lastName = names[1];
+                        // 有了 set 方法，计算属性就是一个可写属性，可重新赋值
+                    },
+                    get: function() {
+                        return this.firstName + ' ' + this.lastName
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

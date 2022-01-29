@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 数组不能采用键值对的形式，只能传入一个个值 -->
+        <h2 :style="[baseStyle,baseStyle1]">{{message}}</h2>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                baseStyle: {
+                    fontSize: '100px'
+                },
+                baseStyle1: {
+                    backgroundColor: 'red'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

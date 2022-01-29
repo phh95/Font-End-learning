@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>下面是一张图片</h2>
+        <!-- 绑定之后，imgURL就成为了一个变量 -->
+        <img v-bind:src="imgURL" alt="" width="400px"><br>
+        <a v-bind:href="aHref">这是我的个人博客</a>
+
+        <!-- v-bind 语法糖的写法 -->
+        <img :src="imgURL" alt="" width="400px"><br>
+        <a :href="aHref">这是我的个人博客</a>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                imgURL: 'https://article-picbed-1302715071.cos.ap-guangzhou.myqcloud.com/2022/01/24/16429985968994.jpg',
+                aHref: 'https://penghh.fun'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 传入的数组，如果字符串带有单引号，就说明这是字符串，是写死的 -->
+        <h2 :class="['active', 'line']">{{message}}</h2>
+
+        <!-- 传入的数组，字符串不带有单引号，就是变量 -->
+        <h2 :class="[active, line]">{{message}}</h2>
+
+        <!-- 另外一种写法 -->
+        <h2 :class="getClasses()">{{message}}</h2>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                active: 'aaaa',
+                line: 'bbbbbb'
+            },
+            methods: {
+                getClasses: function() {
+                    return [this.active, this.line]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
