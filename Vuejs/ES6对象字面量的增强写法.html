@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = 'code';
+        const age = 18;
+        const height = 1.8;
+        // 把这些变量都放到一个对象里面
+        // ES5 的写法
+        // const obj = {
+        //     name: name,
+        //     age: age,
+        //     height: height
+        // }
+
+        // console.log(obj);
+
+        // ES6 的写法，属性的增强写法，只写变量就好
+        const obj = {
+            name,
+            age,
+            height
+        }
+
+        console.log(obj);
+
+        // 函数的增强写法
+
+        // const obj1 = {
+        //     run: function() {
+
+        //     },
+        //     eat: function() {
+
+        //     }
+        // }
+
+        // ES6 函数的增强写法
+        const obj1 = {
+            run() {
+
+            },
+            eat() {
+
+            }
+        }
+    </script>
+</body>
+
+</html>
