@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 调用的函数，不传递参数的情况下，小括号可写可不写 -->
+        <!-- <button @click="btn1Click">按钮1</button> -->
+        <button @click="btn1Click()">按钮1</button>
+
+        <!-- 需要传入参数的情况下，省略了小括号，此时 Vue 会默认将浏览器生成的 event 事件对象作为参数传入到方法 -->
+        <button @click="btn2Click">按钮2</button>
+        <!-- <button @click="btn2Click(event)">按钮2</button> -->
+
+        <!-- 如果带上小括号，但又没有传入参数，会显示 undefined -->
+        <!-- <button @click="btn2Click()">按钮2</button> -->
+
+        <!-- 方法定义时，我们需要浏览器的 event 事件对象、又要传入其他的参数， -->
+        <!-- 在调用方法时，如何获取到浏览器的 event 对象: $event   前面要加一个美元符号 -->
+        <button @click="btn3Click(123, $event)">按钮3</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            methods: {
+                btn1Click() {
+                    console.log("按下了第一个按钮");
+                },
+                // btn2Click(abc) {
+                //     console.log("------", abc);
+                // },
+                btn2Click(event) {
+                    console.log("------", event);
+                },
+                btn3Click(abc, event) {
+                    console.log("+++++", abc, event);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

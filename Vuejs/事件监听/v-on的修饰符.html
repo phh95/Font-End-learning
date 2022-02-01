@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="divClick">
+            aaaaaa
+            <!-- 修饰符 .stop 阻止了 btnClick 点击冒泡 -->
+            <button @click.stop="btnClick">按钮</button>
+        </div>
+        <br>
+        <!-- 修饰符 .prevent 的使用 -->
+        <form action="https://baidu.com">
+            <input type="submit" value="提交" @click.prevent="submitClick">
+        </form>
+
+        <!-- 监听键盘的键帽，譬如按下回车键后键帽弹起，才会执行函数 -->
+        <input type="text" @keyup.enter="keyUp">
+
+        <!-- 修饰符 .once 的使用，只能回调一次 -->
+        <button @click.once="btn2Click">按钮2</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            methods: {
+                btnClick() {
+                    console.log("btnClick");
+                },
+                divClick() {
+                    console.log("divClick");
+                },
+                submitClick() {
+                    console.log("submitClick");
+                },
+                keyUp() {
+                    console.log("keyUp");
+                },
+                btn2Click() {
+                    console.log("btn2Click");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
