@@ -17,8 +17,14 @@
     <div id="app">
         <h2>好看的电影 🎬</h2>
         <ul>
-            <li v-for="m in movies">{{m}}</li>
-            <li v-for="(m,index) in movies" v-on:click="btnClick">{{m}}</li>
+            <li v-for="(item,index) in movies" :class="{active: currentIndex === index}" @click="liClick(index)">
+                {{item}}</li>
+
+            <!-- v-bind 动态绑定 class -->
+            <!-- <li :class="{active: 0 === currentIndex}"></li>
+            <li :class="{active: 1 === currentIndex}"></li>
+            <li :class="{active: 2 === currentIndex}"></li>
+            <li :class="{active: 3 === currentIndex}"></li> -->
         </ul>
     </div>
 
@@ -27,12 +33,13 @@
         const app = new Vue({
             el: '#app',
             data: {
-                movies: ['肖申克的救赎', '活着', '长津湖', '血战钢锯岭']
+                movies: ['肖申克的救赎', '活着', '长津湖', '血战钢锯岭'],
+                currentIndex: 0
             },
             methods: {
-                btnClick: function() {
-                    active
-                    movies[index]
+                liClick(index) {
+                    // 点击的时候，把点击的 li 的索引值 index 赋值给 currentIndex
+                    this.currentIndex = index;
                 }
             }
         })

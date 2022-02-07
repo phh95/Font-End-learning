@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in letters">{{item}}</li>
+        </ul>
+        <button @click="btnClick">按钮</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                letters: ['a', 'b', 'c', 'd']
+            },
+            methods: {
+                btnClick() {
+                    // 数组的 push 方法，在数组最后面增加元素
+                    // this.letters.push('aaaa')
+                    // push 方法可以一次性增加 3 个元素
+                    // this.letters.push('aaa', 'bbb', 'cccc')
+
+                    // pop()  删除数组的最后一个元素
+                    // this.letters.pop()
+
+                    // shift() 删除数组的第一个元素
+                    // this.letters.shift()
+
+                    // unshift()  在数组最前面添加元素
+                    // this.letters.unshift('aaaaa')
+                    // this.letters.unshift('aa', 'bb', 'cc')
+
+                    // splice() 方法，有三个作用：删除元素、插入元素和替换元素
+                    // this.letters.splice(1, 1)
+
+                    // 替换元素，第二个参数，表示替换多少个元素
+                    // this.letters.splice(1, 3, 'm', 'n', 'l')
+
+                    // 插入元素，第二个参数为 0，表示不删除元素，直接在后面插入
+                    // this.letters.splice(1, 0, 'x', 'y', 'z')
+
+                    // reverse() 方法，反转
+                    // this.letters.reverse()
+
+
+                    // 注意：通过数组索引值修改数组中的元素，不是响应式的
+                    // this.letters[0] = 'bbbbb'
+                    // 正确的写法，响应式。用 splice() 方法实现替换
+                    // this.letters.splice(0, 1, 'bbbbb')
+                    // 另外一种方法，使用 vue 的 set 方法，要传入 3 个参数
+                    Vue.set(this.letters, 0, 'bbbbb')
+                    // 注意：这个 Vue 开头的 V 必须是大写字母
+                }
+            }
+        })
+
+        // 可变参数的写法 ...num  传入的参数数量是不确定的
+        // function sum(...num) {
+        //     console.log(num);
+        //     // 这里打印的 num 是一个数组
+        // }
+
+        // // 调用函数
+        // sum(20, 10, 50, 1000, 50, 250)
+
+    </script>
+</body>
+
+</html>

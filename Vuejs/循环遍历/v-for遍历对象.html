@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 按照遍历数组的写法，只能获取到 value -->
+            <li v-for="item in info">{{item}}</li>
+        </ul>
+
+        <!-- 获取 key 和 value，格式(value, key) -->
+        <ul>
+            <li v-for="(value, key) in info">{{key}} - {{value}}</li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                info: {
+                    name: '路飞',
+                    age: 18,
+                    height: 1.8,
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
