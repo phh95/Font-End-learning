@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>请选择你的爱好：</h2>
+        <input type="checkbox" value="篮球" v-model="hobbies">篮球
+        <input type="checkbox" value="足球" v-model="hobbies">足球
+        <input type="checkbox" value="跑步" v-model="hobbies">跑步
+        <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+        <input type="checkbox" value="游泳" v-model="hobbies">游泳
+        <h2>你的爱好有：{{hobbies}}</h2>
+
+        <!-- 上面的代码中的 value 都是写死的，有时候我们需要从服务器动态获取 value， -->
+        <!-- 就需要用到值绑定 -->
+        <!-- 值绑定：本质就是 v-bind 在 input 中的应用 -->
+        <h2>请选择你的爱好：</h2>
+        <label :for="item" v-for="item in originValue">
+            <input type="checkbox" v-bind:value="item" :id="item" v-model="hobbies">{{item}}
+        </label>
+        <h2>你的爱好有：{{hobbies}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                hobbies: [],
+                originValue: ['篮球', '羽毛球', '乒乓球', '足球', '高尔夫']
+            }
+        })
+    </script>
+</body>
+
+</html>

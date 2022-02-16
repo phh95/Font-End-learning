@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <input type="text" v-model="message"> -->
+        <!-- v-model的双向绑定，可以通过两个指令来实现：一个动态绑定value的值，一个是监听input事件 -->
+        <!-- input 有一个 input 事件，监听用户在表单的输入行为 -->
+        <input type="text" v-bind:value="message" v-on:input="valueChange">
+
+        <!-- 另外一种更简便的写法，不需要在实例中定义 valueChange 方法 -->
+        <input type="text" :value="message" @input="message = $event.target.value">
+        <h2>{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            methods: {
+                valueChange(event) {
+                    // 用户在浏览器界面进行操作时，会产生一个 event 对象
+                    this.message = event.target.value;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
