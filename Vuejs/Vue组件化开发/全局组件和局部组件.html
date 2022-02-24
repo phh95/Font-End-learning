@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn></cpn>
+        <cpn></cpn>
+    </div>
+
+    <div id="app2">
+        <!-- 由于是局部组件，这里用了 cpn 标签，并不起作用 -->
+        <cpn></cpn>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 创建组件构造器
+        const cpnC = Vue.extend({
+            template: `
+                <div>
+                    <h2>我是标题</h2>
+                    <p>我是内容，高高兴兴上班去</p>
+                </div>
+            `
+        });
+        // 注册组件，这种方法注册的组件，是全局组件
+        // Vue.component('cpn', cpnC);
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            components: {
+                // 在 Vue 实例下面注册的组件，就是局部组件
+                // cpn 是使用组件时的标签名
+                cpn: cpnC
+            }
+        });
+
+        // 注册另外一个 Vue 实例
+        const app2 = new Vue({
+            el: '#app2'
+        })
+    </script>
+</body>
+
+</html>

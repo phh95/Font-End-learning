@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 组件的语法糖注册方式（全局组件）
+        Vue.component('cpn1', {
+            template: `
+                <div>
+                    <h2>今天是2022年2月22日，21 世纪最多 2 的日子</h2>
+                    <p>我是内容，今天村子封锁出不去了</p>
+                </div>
+            `
+        })
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            // 注册局部组件的语法糖
+            components: {
+                cpn2: {
+                    template: `
+                        <div>
+                            <h2>我是局部组件</h2>
+                            <p>使用语法糖注册的</p>
+                        </div>
+                    `
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

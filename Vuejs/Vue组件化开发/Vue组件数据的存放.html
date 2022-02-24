@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>{{title}}</h2>
+            <p>坐标深圳上沙</p>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('cpn', {
+            template: '#cpn',
+            // data 的值不能是对象类型，而应该是一个函数
+            data() {
+                return {
+                    title: 'abc'
+                }
+            }
+        });
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            }
+        })
+    </script>
+</body>
+
+</html>
