@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <!-- 父组件在调用子组件的时候，想换另外一种方法展示数据 -->
+        <!-- 现在的需求是，如何拿到子组件的数据 -->
+        <cpn>
+            <template slot-scope="slot">
+                <!-- <span v-for="item in slot.data">{{item}} - </span> -->
+                <span>{{slot.data.join(' - ')}}</span>
+                <!-- 这里的 join() 方法，可以把数组元素转换为字符串，并在中间加上一个短横杆 -->
+            </template>
+        </cpn>
+    </div>
+    <template id="cpn">
+        <div>
+            <!-- 这里绑定的 data 是随意起的名字，可以自定义 -->
+            <slot :data="pLanguages">
+                <ul>
+                    <li v-for="item in pLanguages">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            pLanguages: ['Javascript', 'C++', 'Python', 'PHP', 'Swift']
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

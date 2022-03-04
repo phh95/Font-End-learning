@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <cpn v-bind:cmovies="movies" :cmessage="message"></cpn> -->
+        <!-- <cpn :cmovies="movies"></cpn> -->
+        <cpn :cmessage="message" :cmovies="movies"></cpn>
+    </div>
+
+    <!-- 组件模板 -->
+    <template id="cpn">
+        <div>
+            <ul>
+                <li v-for="item in cmovies">{{item}}</li>
+            </ul>
+            <h2>{{cmessage}}</h2>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const cpn = {
+            template: '#cpn',
+            // props: ['cmovies', 'cmessage'], // 这里的数组元素不是字符串，而是变量
+            props: {
+                // 传入对象，有多种好处
+                // 1. 类型限制
+                // cmovies: Array, // 对数据类型进行验证
+                // cmessage: String,
+
+                // 2. 提供一些默认值
+                cmessage: {
+                    type: String,
+                    default: 'aaaaa', // 默认值
+                    require: true, // require 的值为布尔值，为 true 表示 cmessage 是一个必传值，
+                    // 不传值就会报错
+                },
+                cmovies: {
+                    // 数据类型为数组或对象时，默认值必须是一个函数
+                    type: Array,
+                    default () {
+                        return [] // 返回一个数组
+                    }
+                }
+            },
+            data() {
+                return {}
+            }
+        };
+        // 根组件，父组件
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                movies: ['海王', '海贼王', '海尔兄弟']
+            },
+            // 注册一个局部组件(子组件)
+            components: {
+                // cpn: cpn
+                // 上面的可以简写成 cpn
+                cpn
+            }
+        })
+    </script>
+</body>
+
+</html>

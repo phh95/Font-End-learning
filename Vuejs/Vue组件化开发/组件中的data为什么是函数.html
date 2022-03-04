@@ -10,13 +10,16 @@
 
 <body>
     <div id="app">
+        <!-- 三个组件实例对象 -->
+        <cpn></cpn>
+        <cpn></cpn>
         <cpn></cpn>
     </div>
     <template id="cpn">
         <div>
-            <h2>当前计数：</h2>
-            <button>+</button>
-            <button>-</button>
+            <h2>当前计数：{{counter}}</h2>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
         </div>
     </template>
 
@@ -24,7 +27,25 @@
     <script>
         // 1.注册组件 
         Vue.component('cpn', {
-            template: '#cpn'
+            template: '#cpn',
+            data() {
+                // 这里的 data 必须是函数而不是对象，
+                // 可以保证每个组件实例 cpn 的状态是独立的，
+                // 不会受到其他组件的影响（解藕）
+                // data 函数返回的三个 counter，它指向的内存地址是不一样的
+                // 三个组件的数据就不会互相影响
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increment() {
+                    this.counter++;
+                },
+                decrement() {
+                    this.counter--;
+                }
+            }
         })
         const app = new Vue({
             el: '#app',

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 组件模板 cpn 属于 app 实例，因此v-show用到的变量isShow，
+        会去 Vue 实例里面找，而不是去组件模板里找 -->
+        <cpn v-show="isShow"></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>我是子组件</h2>
+            <p>等待卫健委出的推送</p>
+            <button v-show=isShow>最终无法被渲染出来</button>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                isShow: true
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            isShow: false
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
