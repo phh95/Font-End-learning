@@ -1,0 +1,15 @@
+/* body {
+    background-color: pink;
+} */
+
+
+/* body {
+    background: url('../img/bg.jpeg');
+} */
+
+
+/* 测试使用一张超过 limit 大小的图片 */
+
+body {
+    background: url('../img/naruto.jpeg');
+}
