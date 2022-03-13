@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 默认会传入 event 对象 -->
+        <button @click="btn1Click">按钮1</button>
+
+        <!-- 传入多个参数的时候，event 对象前面要加个 $ -->
+        <button @click="btn2Click($event, 'phh', 28)">按钮2</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: '你好呀'
+                }
+            },
+            methods: {
+                btn1Click() {
+                    console.log(event);
+                },
+                btn2Click(event, name, age) {
+                    console.log(name, age, event);
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

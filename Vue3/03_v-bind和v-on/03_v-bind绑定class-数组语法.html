@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div :class="['abc', title]">啥时候解封</div>
+        <!-- 在数组内还可以使用三元运算符 -->
+        <!-- 三元运算符：isActive 为 true，class 包含 active 样式，否则就为空 -->
+        <div :class="['abc', title, isActive ? 'active':'']">啥时候解封</div>
+        <!-- 数组内还可以嵌套对象 -->
+        <div :class="['abc', title, {active: isActive}]">啥时候解封</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    message: '你好呀',
+                    title: 'cba',
+                    isActive: true
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

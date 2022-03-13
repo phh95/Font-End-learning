@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="x-template" id="tep01">
+        <div>
+            <h2>{{message}}</h2>
+            <h2>{{counter}}</h2>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
+        </div>
+    </script>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.createApp({
+            // 这里使用 id，内部实际上会运行 document.querySelector("#tep01")
+            template: '#tep01',
+            data: function() {
+                return {
+                    message: "hello vue3",
+                    counter: 1
+                }
+            },
+            methods: {
+                increment() {
+                    this.counter += 1
+                },
+                decrement() {
+                    this.counter -= 1
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

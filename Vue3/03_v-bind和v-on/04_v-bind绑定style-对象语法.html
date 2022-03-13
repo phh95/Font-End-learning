@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- :style="{cssPropertyName: cssPropertyValue}" -->
+        <div :style="{color: finalColor, fontSize: '30px'}">哈哈哈哈哈哈</div>
+        <div :style="{color: finalColor, 'font-size': '30px'}">哈哈哈哈哈哈</div>
+        <!-- 拼接字符串 -->
+        <div :style="{color: finalColor, 'font-size': finalFontSize + 'px'}">哈哈哈哈</div>
+        <div :style="finalStyle">呵呵呵呵呵</div>
+        <!-- 调用一个方法 -->
+        <div :style="getFinalStyle()">这是调用函数创建的样式</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    finalColor: 'red',
+                    finalFontSize: 50,
+                    finalStyle: {
+                        color: 'red',
+                        // 对象中的 key 更喜欢用驼峰的写法
+                        // 'font-size': '50px',
+                        fontSize: '50px',
+                        fontWeight: 700
+                    }
+                }
+            },
+            methods: {
+                getFinalStyle() {
+                    return {
+                        color: 'black',
+                        backgroundColor: 'yellow',
+                        fontSize: '50px'
+                    }
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

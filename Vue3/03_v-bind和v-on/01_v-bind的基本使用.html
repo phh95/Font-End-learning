@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- vue2 template模板中只能有一个根元素，多个元素得包裹到一个div标签里 -->
+    <!-- vue3 允许template模板中有多个根元素 -->
+    <template id="my-app">
+        <img v-bind:src="imgUrl" alt="">
+        <a v-bind:href="link">我的个人博客</a>
+
+        <!-- 语法糖，简写，属性前面加一个冒号 -->
+        <img :src="imgUrl" alt="">
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    imgUrl: "https://article-picbed-1302715071.cos.ap-guangzhou.myqcloud.com/2021/05/28/gong-zhong-hao-wei-bu-er-wei-ma-dailogo.png",
+                    link: "https://penghh.fun"
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>
