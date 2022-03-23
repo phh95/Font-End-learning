@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>{{fullName}}</h2>
+        <button @click="changeFullName">修改fullName</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    firstName: 'Kobe',
+                    lastName: 'Byrant'
+                }
+            },
+            computed: {
+                // 这是计算属性的简写，只用到了 getter 方法，这是开发中常用的
+                // fullName() {
+                //     return this.firstName + " " + this.lastName
+                // }
+
+                // 计算属性的完整写法，应该同时包含 setter 和 getter 方法
+                fullName: {
+                    set: function(newValue) {
+                        // 计算属性重新赋值，就会调用 setter 方法
+                        console.log(newValue);
+                        const name = newValue.split(" ") // 分割后得到的是一个数组
+                        this.firstName = name[0];
+                        this.lastName = name[1]
+                    },
+                    get: function() {
+                        return this.firstName + " " + this.lastName
+                    }
+                }
+            },
+            methods: {
+                changeFullName() {
+                    // 对计算属性 fullName 进行重新赋值
+                    this.fullName = 'angola peng'
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

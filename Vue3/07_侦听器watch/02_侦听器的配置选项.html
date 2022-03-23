@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>你的名字：{{info.name}}</h2>
+        <button @click="changeInfo">修改整个Info对象</button>
+        <button @click="changeInfoName">修改Info对象中的一个键值对</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    info: {
+                        name: 'phh',
+                        age: 18
+                    }
+                }
+            },
+            watch: {
+                // info(newInfo, oldInfo) {
+                //     console.log("新值：", newInfo, "旧值：", oldInfo);
+                // }
+
+                // 深度侦听
+                info: {
+                    handler: function(newInfo, oldInfo) {
+                        console.log("新值：", newInfo, "旧值：", oldInfo);
+                    },
+                    deep: true, // 深度侦听，可以侦听到info对象中单个或多个键值对发生变化
+                    immediate: true // 立即执行（页面渲染、数据未发生变化的情况下也会执行一次）
+                }
+            },
+            methods: {
+                changeInfo() {
+                    // 修改整个 info 对象
+                    this.info = {
+                        name: 'angola peng'
+                    }
+                },
+                changeInfoName() {
+                    // 修改 info 对象中的一个键值对
+                    this.info.name = 'angola peng'
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

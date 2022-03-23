@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. 对象的引用赋值 -->
+    <script>
+        // const info = {
+        //     name: 'phh',
+        //     age: 28
+        // };
+        // const obj = info;
+        // info.name = 'angola peng';
+        // console.log(obj.name); // 得到的是 angol peng
+        // 原因在于：info 和 obj 指向同一个内存地址
+    </script>
+
+    <!-- 2. 对象的浅拷贝 -->
+    <script>
+        // const info = {
+        //     name: 'phh',
+        //     age: 28,
+        // };
+        // // 浅拷贝
+        // const obj = Object.assign({}, info);
+        // info.name = 'angola peng'
+        // console.log(obj.name); // 得到的是 phh
+        // 浅拷贝生成的 obj，在堆内存中创建了一个新的空间，与info不是指向同一个内存地址
+
+        // 浅拷贝的另外一种情况，对象内部嵌套了另外一个对象
+        // const info = {
+        //     name: 'phh',
+        //     age: 28,
+        //     friend: {
+        //         // 这个嵌套的对象，在堆内存中有单独另外一个空间
+        //         name: 'kobe'
+        //     }
+        // };
+        // const obj = Object.assign({}, info);
+        // info.friend.name = 'angola peng';
+        // console.log(obj.friend.name); // 得到的是 angola peng
+    </script>
+
+    <!-- 3. 对象的深拷贝 -->
+    <script>
+        const info = {
+            name: 'phh',
+            age: 28,
+            friend: {
+                name: 'kobe'
+            }
+        };
+        // 借助 JSON 的两个方法，实现深拷贝
+        const obj = JSON.parse(JSON.stringify(info));
+        info.friend.name = 'angola peng';
+        console.log(obj.friend.name); // 得到的是 kobe
+    </script>
+</body>
+
+</html>

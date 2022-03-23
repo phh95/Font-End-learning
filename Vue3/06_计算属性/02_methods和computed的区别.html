@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>{{getFullName()}}</h2>
+        <h2>{{getFullName()}}</h2>
+        <h2>{{getFullName()}}</h2>
+
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+
+        <button @click="changeFirstName">修改 firstname</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    firstName: 'Kobe',
+                    lastName: 'Byrant'
+                }
+            },
+            methods: {
+                getFullName() {
+                    console.log('methods打印的getFullName');
+                    return this.firstName + " " + this.lastName
+                },
+                changeFirstName() {
+                    // return this.firstName = 'angola'
+                    this.firstName = 'angola'
+                }
+            },
+            computed: {
+                fullName() {
+                    // 计算属性有缓存，所以即便使用多次，也只会打印1次
+                    console.log('计算属性打印的fullName');
+                    return this.firstName + " " + this.lastName
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

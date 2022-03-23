@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>我喜欢的小说：</h2>
+        <ul>
+            <!-- 遍历数组 -->
+            <li v-for="novel in novels">{{novel}}</li>
+        </ul>
+        <h2>个人信息：</h2>
+        <ul>
+            <!-- 遍历对象，只写一个 v，它只会遍历对象中的 value -->
+            <li v-for="v in info">{{v}}</li>
+        </ul>
+        <ul>
+            <!-- 同时遍历 value 和 key -->
+            <li v-for="(v,key) in info">{{v}} - {{key}}</li>
+            <li v-for="(v,key,index) in info">{{v}} - {{key}} - {{index}}</li>
+        </ul>
+        <h2>遍历数字</h2>
+        <ul>
+            <!-- 从1遍历到10 -->
+            <li v-for="num in 10">{{num}}</li>
+        </ul>
+        <ul>
+            <!-- 从1遍历到10，数字同样有索引值 -->
+            <li v-for="(num,index) in 10">{{num}} - {{index}}</li>
+        </ul>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    novels: ['活着', '文城', '第七天', '许三观卖血记'],
+                    info: {
+                        name: 'phh',
+                        age: 28,
+                        height: 172
+                    }
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>你的名字：{{info.name}}</h2>
+        <button @click="changeInfo">修改整个Info对象</button>
+        <button @click="changeInfoName">修改Info对象中的一个键值对</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    info: {
+                        name: 'phh',
+                        age: 18
+                    }
+                }
+            },
+            watch: {},
+            methods: {
+                changeInfo() {
+                    // 修改整个 info 对象
+                    this.info = {
+                        name: 'angola peng'
+                    }
+                },
+                changeInfoName() {
+                    // 修改 info 对象中的一个键值对
+                    this.info.name = 'angola peng'
+                }
+            },
+            // 侦听器 $watch API，配合生命周期函数 created() 一起使用
+            created() {
+                // $watch 中的第一个参数是，要侦听的对象info
+                this.$watch("info", function(newInfo, oldInfo) {
+                    console.log("新值：", newInfo, "旧值：", oldInfo);
+                }, {
+                    // 配置选项
+                    deep: true,
+                    immediate: true
+                })
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

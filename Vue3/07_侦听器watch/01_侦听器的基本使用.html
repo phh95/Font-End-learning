@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        你的问题是：<input type="text" v-model="question">
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    // 侦听question发生变化时，去进行一些逻辑处理（例如网络请求）
+                    question: 'Hello world'
+                }
+            },
+            watch: {
+                question(newValue, oldValue) {
+                    console.log("新值：" + newValue, "旧值：" + oldValue);
+                    // 当 data 中的 question 发生变化时，调用 methods 的 queryAnswer函数
+                    this.queryAnswer();
+                    console.log("-------");
+                }
+            },
+            methods: {
+                queryAnswer() {
+                    console.log(`你问题${this.question}的回答是 哈哈哈哈哈哈`);
+                }
+            }
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

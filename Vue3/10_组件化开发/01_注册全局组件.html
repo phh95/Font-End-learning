@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <component-a></component-a>
+    </template>
+
+    <template id="component-a">
+        <h2>{{title}}</h2>
+        <p>{{desc}}</p>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 这里的 App 其实就是一个组件（根组件）
+        const App = {
+            template: '#my-app',
+        }
+        const app = Vue.createApp(App);
+
+        // 使用app注册一个全局组件
+        app.component('component-a', {
+            template: '#component-a',
+            data() {
+                return {
+                    title: '我是标题',
+                    desc: '上沙龙秋村新增5个确诊'
+                }
+            }
+        })
+
+
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
