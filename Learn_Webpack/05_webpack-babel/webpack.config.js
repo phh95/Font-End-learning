@@ -35,23 +35,6 @@ module.exports = {
                     "less-loader"
                 ]
             },
-            // {
-            //     test: /\.(png|jpg|gif|svg|jpeg)$/,
-            //     use: [{
-            //         loader: "url-loader",
-            //         options: {
-            //             esModule: false,
-            //             // outputPath: "img",
-            //             // name: "[name]_[hash:6].[ext]",
-
-            //             // vue脚手架中可以把outputPath字段去掉
-            //             name: "img/[name]_[hash:6].[ext]",
-            //             // 小于 100 kb 的图片会以 base64 进行编码
-            //             limit: 100 * 1024
-            //         }
-            //     }],
-            //     type: 'javascript/auto'
-            // }
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
                 type: "asset",
@@ -66,24 +49,33 @@ module.exports = {
                     }
                 }
             },
-            // 使用 file-loader 加载字体文件
-            // {
-            //     test: /\.(eot|ttf|woff2?)$/,
-            //     use: {
-            //         loader: "file-loader",
-            //         options: {
-            //             esModule: false,
-            //             name: "font/[name]_[hash:6].[ext]"
-            //         },
-            //     },
-            //     type: 'javascript/auto'
-            // }
             {
                 test: /\.(eot|ttf|woff2?)$/,
                 type: "asset/resource",
                 generator: {
                     filename: "font/[name]_[hash:6][ext]"
                 }
+            },
+            // {
+            //     test: /\.js$/,
+            //     use: {
+            //         loader: "babel-loader",
+            //         options: {
+            //             // plugins: [
+            //             //     "@babel/plugin-transform-arrow-functions",
+            //             //     "@babel/plugin-transform-block-scoping",
+            //             // ]
+
+            //             // 使用babel预设替代上面的两个插件
+            //             presets: [
+            //                 "@babel/preset-env"
+            //             ]
+            //         }
+            //     }
+            // }
+            {
+                test: /\.js$/,
+                loader: "babel-loader"
             }
         ]
     },

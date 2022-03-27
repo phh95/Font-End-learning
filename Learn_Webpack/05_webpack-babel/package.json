@@ -10,7 +10,13 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@babel/cli": "^7.17.6",
+        "@babel/core": "^7.17.8",
+        "@babel/plugin-transform-arrow-functions": "^7.16.7",
+        "@babel/plugin-transform-block-scoping": "^7.16.7",
+        "@babel/preset-env": "^7.16.11",
         "autoprefixer": "^10.4.4",
+        "babel-loader": "^8.2.4",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^9.0.0",
         "css-loader": "^6.7.1",
