@@ -43,8 +43,10 @@
 ## 前端学习资料   
 
 * [黑马程序员pink老师前端入门教程，零基础必看的h5(html5)+css3+移动端前端视频教程](https://www.bilibili.com/video/BV14J4114768?p=1)：这个教程我觉得讲得挺好的，看起来也不枯燥。       
-* [JavaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts黑马pink老师前端入门基础视频教程(500多集)持续](https://www.bilibili.com/video/BV1Sy4y1C7ha?p=1)      
+* [JavaScript基础语法-dom-bom-js-es6新语法-jQuery-数据可视化echarts黑马pink老师前端入门基础视频教程(500多集)持续](https://www.bilibili.com/video/BV1Sy4y1C7ha?p=1)       
+* [coderwhy - Vue2视频课程](https://www.bilibili.com/video/BV17j411f74d)：这个视频录制于 2018 年，有点旧，不建议看了。       
 
 ## 我的前端学习笔记        
 
-* [前端 - 发布于 Notion](https://phh95.notion.site/35f9be5333e24ba29a10b2d59ce0c172)        
+* [前端 - 发布于 Notion](https://phh95.notion.site/35f9be5333e24ba29a10b2d59ce0c172)         
+* [Vue3 学习笔记（一） - 发布于我的个人博客](https://www.penghh.fun/2022/04/04/2022-4-4-vue3learnnote/)         
