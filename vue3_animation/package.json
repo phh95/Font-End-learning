@@ -1,5 +1,5 @@
 {
-  "name": "vue3_component",
+  "name": "vue3_animation",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,8 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "animation.css": "^0.1.0",
     "core-js": "^3.6.5",
-    "mitt": "^3.0.0",
+    "gsap": "^3.10.4",
+    "lodash": "^4.17.21",
     "vue": "^3.0.0"
   },
   "devDependencies": {
