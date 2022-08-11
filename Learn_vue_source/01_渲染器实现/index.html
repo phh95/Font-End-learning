@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./render.js"></script>
+
+    <script>
+        // 1. 通过 h 函数创建一个 vnode 对象
+        const vnode = h("div", {
+            class: "phh"
+        }, [
+            h("h2", null, "这是h2文本样式"),
+            h("button", null, "+1")
+        ])
+
+        console.log(vnode);
+
+        // 2. 通过 mount 函数，将 vnode 挂载到 div#app 上面
+        // 虚拟DOM 转化为真实DOM，就是通过 mount 实现的
+        mount(vnode, document.querySelector("#app"))
+
+        // 3. 创建新的 vnode
+        // setTimeout(() => {
+        //     const vnode1 = h("h2", {
+        //         class: "angola"
+        //     }, "哈哈哈哈哈哈");
+
+        //     patch(vnode, vnode1);
+        // }, 5000)
+
+        setTimeout(() => {
+            const vnode1 = h("h2", {
+                class: "angola"
+            }, [
+                h("span", null, "这是一个span标签"),
+                h("button", null, "-1")
+            ])
+
+            patch(vnode, vnode1);
+        }, 5000)
+    </script>
+</body>
+
+</html>
