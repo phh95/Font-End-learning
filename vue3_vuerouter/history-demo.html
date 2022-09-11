@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/home">Home</a>
+    <a href="/about">About</a>
+
+    <div class="content">Default</div>
+
+    <script>
+        const contentEl = document.querySelector(".content");
+        const aEls = document.getElementsByTagName("a");
+
+        for (let aEl of aEls) {
+            aEl.addEventListener("click", e => {
+                // 阻止默认的事件——点击链接后向服务器请求数据
+                e.preventDefault();
+
+                const href = aEl.getAttribute("href");
+                // console.log(href);
+                // 把拿到的路径 /home 加到 url 中
+                history.pushState({}, "", href);
+
+                // location.pathname 可以拿到当前的路径  /home 或者 /about 
+                // console.log(location.pathname);
+
+                switch (location.pathname) {
+                    case "/home":
+                        contentEl.innerHTML = "Home";
+                        break;
+                    case "/about":
+                        contentEl.innerHTML = "About";
+                        break;
+                    default:
+                        contentEl.innerHTML = "Default"
+                }
+
+            })
+        }
+
+        window.addEventListener("popstate", () => {
+            switch (location.pathname) {
+                case "/home":
+                    contentEl.innerHTML = "Home";
+                    break;
+                case "/about":
+                    contentEl.innerHTML = "About";
+                    break;
+                default:
+                    contentEl.innerHTML = "Default"
+            }
+        })
+    </script>
+</body>
+
+</html>

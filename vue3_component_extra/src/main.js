@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
-import App from './04_vue插件的使用/App.vue'
+// import App from './04_vue插件的使用/App.vue'
+import App from './03_自定义指令/App.vue'  
 
 // 导入指令文件夹中的指令
 import registerDirectives from './directives';

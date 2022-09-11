@@ -8,7 +8,7 @@ export default function(app) {
 
             // 如果 v-format-time 指令没有传入参数，就采用默认的时间格式
             if (!formatString) {
-                formatString = "YYYY-MM-DD HH-mm-ss"
+                formatString = "YYYY-MM-DD HH:mm:ss"
             }
 
             // console.log(el);
