@@ -10,5 +10,24 @@
     <h2>通过 Webpack 搭建 TypeScript 运行环境</h2>
     <h2>TS 文件会编译为 bundle.js 文件</h2>
     <!-- <script src="./dist/bundle.js"></script> -->
+
+    <!-- 通过cdn引入jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <script>
+        let phhName = "phh"
+        let phhAge = 28
+        let phhHeight = 172
+
+        function phhFoo() {
+            console.log("函数被调用了, 打印phhFoo");
+        }
+
+        // ES5 中定义一个类
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+    </script>
 </body>
 </html>
